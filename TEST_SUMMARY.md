@@ -4,6 +4,7 @@
 
 Zestaw `epc_acceptance_v0.robot` zawiera skrócone testy akceptacyjne API symulatora EPC.  
 Suite weryfikuje kluczowe scenariusze biznesowe dla:
+
 - dołączania i odłączania UE,
 - uruchamiania i zatrzymywania ruchu,
 - obsługi bearerów,
@@ -24,11 +25,12 @@ Każdy test startuje od czystego stanu dzięki `Test Setup: Reset Simulator`.
 ## Struktura podejścia testowego
 
 Testy są napisane stylem BDD z czytelnymi krokami:
-- `Gdy ...` — akcja na API (np. attach, start traffic, delete bearer),
-- `Wtedy ...` — walidacja statusu HTTP,
-- `Oraz ...` — walidacje pól odpowiedzi.
 
-W pliku użyto embedded keywords dla akcji z parametrami (np. `Gdy dołączam UE o ID ${ue_id}`), żeby było jasno, który parametr jest który.
+- `When ...` — akcja na API (np. attach, start traffic, delete bearer),
+- `Then ...` — walidacja statusu HTTP,
+- `And ...` — walidacje pól odpowiedzi.
+
+W pliku użyto embedded keywords dla akcji z parametrami (np. `When I attach UE with ID ${ue_id}`). Wartości parametrów muszą być w tej samej linii co krok (np. `When I attach UE with ID 42`), a nie w osobnej kolumnie.
 
 ## Szczegółowy opis 10 testów
 
