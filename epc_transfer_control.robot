@@ -2,7 +2,7 @@
 Documentation    Testy akceptacyjne sterowania transferem danych EPC.
 ...              Zakres: rozpoczecie transferu DL, zakonczenie dla jednego i wszystkich bearerow,
 ...              oraz obsluga bledow dla nieaktywnego bearera i wartosci spoza specyfikacji.
-Library          EpcTransferApiLibrary.py    ${EPC_BASE_URL}
+Library          EpcApiLibrary.py    ${EPC_BASE_URL}
 Library          Collections
 Test Setup       Reset Simulator
 
