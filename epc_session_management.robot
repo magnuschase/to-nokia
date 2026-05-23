@@ -38,7 +38,7 @@ EPC-SM-1-002 Attach - błąd dla ID poza dokumentowanym zakresem
     END
     And simulator has no attached UEs
 
-EPC-SM-1-003 Attach - duplikat oraz brak „pół-sesji” po odrzuconym attach
+EPC-SM-1-003 Attach - duplikat oraz brak "pół-sesji" po odrzuconym attach
     [Documentation]    1.3: ponowny attach → błąd, pierwsza sesja bez zmian. 1.2: po błędzie 101 tylko poprawny attach w sieci.
     [Tags]    EPC-SM-1-003    req_1    attach    duplicate    state
     When I attach UE with ID 7
