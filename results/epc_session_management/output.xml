@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.13.12 on darwin)" generated="2026-05-23T19:44:19.768863" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.13.12 on darwin)" generated="2026-05-23T19:48:10.057754" rpa="false" schemaversion="5">
 <suite id="s1" name="Epc Session Management" source="/Users/jakubkapala/Code/studia/sem6/to-nokia/to-nokia/epc_session_management.robot">
 <test id="s1-t1" name="EPC-SM-1-001 Attach - sukces, bearer 9 i granice dokumentowane 0 oraz 100" line="19">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.821836" elapsed="0.011836"/>
+<status status="PASS" start="2026-05-23T19:48:10.109333" elapsed="0.016516"/>
 </kw>
 <kw name="When I attach UE with ID 42" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.841891" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.841931" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
+<msg time="2026-05-23T19:48:10.129815" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.129847" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.833996" elapsed="0.007948"/>
+<status status="PASS" start="2026-05-23T19:48:10.126204" elapsed="0.003655"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.842166" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.130104" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.842016" elapsed="0.000166"/>
+<status status="PASS" start="2026-05-23T19:48:10.129938" elapsed="0.000183"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.842313" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
+<msg time="2026-05-23T19:48:10.130253" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.842224" elapsed="0.000102"/>
+<status status="PASS" start="2026-05-23T19:48:10.130163" elapsed="0.000104"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.833871" elapsed="0.008479"/>
+<status status="PASS" start="2026-05-23T19:48:10.126078" elapsed="0.004212"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.842532" elapsed="0.000201"/>
+<status status="PASS" start="2026-05-23T19:48:10.130472" elapsed="0.000206"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.842445" elapsed="0.000311"/>
+<status status="PASS" start="2026-05-23T19:48:10.130380" elapsed="0.000321"/>
 </kw>
 <kw name="When I get UE with ID 42" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.845365" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.845391" level="INFO">${body} = {'ue_id': 42, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.133123" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.133142" level="INFO">${body} = {'ue_id': 42, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.842919" elapsed="0.002483"/>
+<status status="PASS" start="2026-05-23T19:48:10.130949" elapsed="0.002201"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.845580" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.133298" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.845460" elapsed="0.000135"/>
+<status status="PASS" start="2026-05-23T19:48:10.133203" elapsed="0.000108"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.845712" level="INFO">${body} = {'ue_id': 42, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.133425" level="INFO">${body} = {'ue_id': 42, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.845635" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:48:10.133346" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.842837" elapsed="0.002905"/>
+<status status="PASS" start="2026-05-23T19:48:10.130790" elapsed="0.002663"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.845900" elapsed="0.000173"/>
+<status status="PASS" start="2026-05-23T19:48:10.133606" elapsed="0.000154"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.845826" elapsed="0.000272"/>
+<status status="PASS" start="2026-05-23T19:48:10.133531" elapsed="0.000248"/>
 </kw>
 <kw name="And UE has default bearer per documentation">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${body}[bearers]</arg>
 <arg>${DOC_DEFAULT_BEARER}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.846316" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:48:10.133917" elapsed="0.000064"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.846217" elapsed="0.000209"/>
+<status status="PASS" start="2026-05-23T19:48:10.133844" elapsed="0.000155"/>
 </kw>
 <kw name="When I attach UE with ID ${DOC_UE_ID_MIN}" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.848343" level="INFO">${status_code} = 422</msg>
-<msg time="2026-05-23T19:44:19.848365" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
+<msg time="2026-05-23T19:48:10.135831" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.135858" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.846686" elapsed="0.001688"/>
+<status status="PASS" start="2026-05-23T19:48:10.134187" elapsed="0.001682"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.848521" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.136049" level="INFO">${status_code} = 422</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.848430" elapsed="0.000102"/>
+<status status="PASS" start="2026-05-23T19:48:10.135928" elapsed="0.000136"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.848634" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
+<msg time="2026-05-23T19:48:10.136190" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.848563" elapsed="0.000082"/>
+<status status="PASS" start="2026-05-23T19:48:10.136105" elapsed="0.000099"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.846591" elapsed="0.002070"/>
+<status status="PASS" start="2026-05-23T19:48:10.134105" elapsed="0.002117"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.849142" level="FAIL">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
+<msg time="2026-05-23T19:48:10.136581" level="FAIL">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-05-23T19:44:19.848826" elapsed="0.000413">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
+<status status="FAIL" start="2026-05-23T19:48:10.136380" elapsed="0.000270">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
 </kw>
-<status status="FAIL" start="2026-05-23T19:44:19.848744" elapsed="0.000548">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
+<status status="FAIL" start="2026-05-23T19:48:10.136300" elapsed="0.000396">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
 </kw>
 <kw name="When I attach UE with ID ${DOC_UE_ID_MAX}" source_name="When I attach UE with ID ${ue_id}">
-<status status="NOT RUN" start="2026-05-23T19:44:19.849452" elapsed="0.000011"/>
+<status status="NOT RUN" start="2026-05-23T19:48:10.136824" elapsed="0.000008"/>
 </kw>
 <kw name="Then response is success">
-<status status="NOT RUN" start="2026-05-23T19:44:19.849528" elapsed="0.000007"/>
+<status status="NOT RUN" start="2026-05-23T19:48:10.137042" elapsed="0.000022"/>
 </kw>
 <doc>1.1, 1.4, Założenia: attach w zakresie; po attach bearer 9; UE=0 i UE=100 na granicach.</doc>
 <tag>attach</tag>
@@ -123,470 +123,470 @@
 <tag>EPC-SM-1-001</tag>
 <tag>happy_path</tag>
 <tag>req_1</tag>
-<status status="FAIL" start="2026-05-23T19:44:19.821478" elapsed="0.028113">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
+<status status="FAIL" start="2026-05-23T19:48:10.108960" elapsed="0.028210">Oczekiwano 2xx wg dokumentacji, otrzymano HTTP 422: {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</status>
 </test>
 <test id="s1-t2" name="EPC-SM-1-002 Attach - błąd dla ID poza dokumentowanym zakresem" line="32">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.850174" elapsed="0.005162"/>
+<status status="PASS" start="2026-05-23T19:48:10.137498" elapsed="0.004293"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="When I attach UE with ID ${invalid_id}" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.857620" level="INFO">${status_code} = 422</msg>
-<msg time="2026-05-23T19:44:19.857648" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': -1, 'ctx': {'ge': 1}}]}</msg>
+<msg time="2026-05-23T19:48:10.143700" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.143720" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': -1, 'ctx': {'ge': 1}}]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.855778" elapsed="0.001881"/>
+<status status="PASS" start="2026-05-23T19:48:10.142179" elapsed="0.001549"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.857853" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.143886" level="INFO">${status_code} = 422</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.857724" elapsed="0.000142"/>
+<status status="PASS" start="2026-05-23T19:48:10.143773" elapsed="0.000126"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.857981" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': -1, 'ctx': {'ge': 1}}]}</msg>
+<msg time="2026-05-23T19:48:10.144013" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be greater than or equal to 1', 'input': -1, 'ctx': {'ge': 1}}]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.857901" elapsed="0.000102"/>
+<status status="PASS" start="2026-05-23T19:48:10.143934" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.855623" elapsed="0.002399"/>
+<status status="PASS" start="2026-05-23T19:48:10.142038" elapsed="0.002006"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.858152" elapsed="0.000143"/>
+<status status="PASS" start="2026-05-23T19:48:10.144180" elapsed="0.000149"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.858078" elapsed="0.000236"/>
+<status status="PASS" start="2026-05-23T19:48:10.144103" elapsed="0.000246"/>
 </kw>
 <var name="${invalid_id}">-1</var>
-<status status="PASS" start="2026-05-23T19:44:19.855496" elapsed="0.002825"/>
+<status status="PASS" start="2026-05-23T19:48:10.141925" elapsed="0.002431"/>
 </iter>
 <iter>
 <kw name="When I attach UE with ID ${invalid_id}" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.860120" level="INFO">${status_code} = 422</msg>
-<msg time="2026-05-23T19:44:19.860145" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.147495" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.147524" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.858516" elapsed="0.001637"/>
+<status status="PASS" start="2026-05-23T19:48:10.144580" elapsed="0.002954"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.860331" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.147714" level="INFO">${status_code} = 422</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.860212" elapsed="0.000132"/>
+<status status="PASS" start="2026-05-23T19:48:10.147601" elapsed="0.000126"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.860457" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.147833" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.860380" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:48:10.147761" elapsed="0.000083"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.858439" elapsed="0.002049"/>
+<status status="PASS" start="2026-05-23T19:48:10.144490" elapsed="0.003371"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.860622" elapsed="0.000158"/>
+<status status="PASS" start="2026-05-23T19:48:10.147991" elapsed="0.000154"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.860549" elapsed="0.000251"/>
+<status status="PASS" start="2026-05-23T19:48:10.147918" elapsed="0.000245"/>
 </kw>
 <var name="${invalid_id}">101</var>
-<status status="PASS" start="2026-05-23T19:44:19.858354" elapsed="0.002453"/>
+<status status="PASS" start="2026-05-23T19:48:10.144396" elapsed="0.003774"/>
 </iter>
 <iter>
 <kw name="When I attach UE with ID ${invalid_id}" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.863365" level="INFO">${status_code} = 422</msg>
-<msg time="2026-05-23T19:44:19.863384" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 999, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.149969" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.149995" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 999, 'ctx': {'le': 100}}]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.861010" elapsed="0.002382"/>
+<status status="PASS" start="2026-05-23T19:48:10.148359" elapsed="0.001647"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.863537" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.150173" level="INFO">${status_code} = 422</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.863440" elapsed="0.000109"/>
+<status status="PASS" start="2026-05-23T19:48:10.150070" elapsed="0.000115"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.863663" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 999, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.150289" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 999, 'ctx': {'le': 100}}]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.863583" elapsed="0.000093"/>
+<status status="PASS" start="2026-05-23T19:48:10.150218" elapsed="0.000083"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.860930" elapsed="0.002763"/>
+<status status="PASS" start="2026-05-23T19:48:10.148285" elapsed="0.002031"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.863820" elapsed="0.000151"/>
+<status status="PASS" start="2026-05-23T19:48:10.150438" elapsed="0.000127"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.863748" elapsed="0.000243"/>
+<status status="PASS" start="2026-05-23T19:48:10.150368" elapsed="0.000215"/>
 </kw>
 <var name="${invalid_id}">999</var>
-<status status="PASS" start="2026-05-23T19:44:19.860842" elapsed="0.003155"/>
+<status status="PASS" start="2026-05-23T19:48:10.148201" elapsed="0.002388"/>
 </iter>
 <var>${invalid_id}</var>
 <value>-1</value>
 <value>101</value>
 <value>999</value>
-<status status="PASS" start="2026-05-23T19:44:19.855409" elapsed="0.008599"/>
+<status status="PASS" start="2026-05-23T19:48:10.141856" elapsed="0.008743"/>
 </for>
 <kw name="And simulator has no attached UEs">
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.866240" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.866259" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.152695" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.152717" level="INFO">${body} = {'ues': []}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:19.864276" elapsed="0.001990"/>
+<status status="PASS" start="2026-05-23T19:48:10.150837" elapsed="0.001888"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.866425" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.152884" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.866320" elapsed="0.000118"/>
+<status status="PASS" start="2026-05-23T19:48:10.152778" elapsed="0.000119"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.866552" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.153006" level="INFO">${body} = {'ues': []}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.866472" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:48:10.152931" elapsed="0.000086"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.864202" elapsed="0.002380"/>
+<status status="PASS" start="2026-05-23T19:48:10.150774" elapsed="0.002260"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.866711" elapsed="0.000165"/>
+<status status="PASS" start="2026-05-23T19:48:10.153199" elapsed="0.000519"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.866638" elapsed="0.000258"/>
+<status status="PASS" start="2026-05-23T19:48:10.153103" elapsed="0.000653"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.867064" level="INFO">Length is 0.</msg>
+<msg time="2026-05-23T19:48:10.153980" level="INFO">Length is 0.</msg>
 <arg>${body}[ues]</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.866923" elapsed="0.000154"/>
+<status status="PASS" start="2026-05-23T19:48:10.153807" elapsed="0.000188"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.864104" elapsed="0.002988"/>
+<status status="PASS" start="2026-05-23T19:48:10.150693" elapsed="0.003319"/>
 </kw>
 <doc>1.2, Założenia: -1, 101, 999 → błąd; sieć pozostaje pusta.</doc>
 <tag>attach</tag>
 <tag>EPC-SM-1-002</tag>
 <tag>req_1</tag>
 <tag>validation</tag>
-<status status="PASS" start="2026-05-23T19:44:19.849957" elapsed="0.017191"/>
+<status status="PASS" start="2026-05-23T19:48:10.137336" elapsed="0.016732"/>
 </test>
 <test id="s1-t3" name="EPC-SM-1-003 Attach - duplikat oraz brak &quot;pół-sesji&quot; po odrzuconym attach" line="41">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.867444" elapsed="0.003864"/>
+<status status="PASS" start="2026-05-23T19:48:10.154346" elapsed="0.003312"/>
 </kw>
 <kw name="When I attach UE with ID 7" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.875266" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.875294" level="INFO">${body} = {'status': 'attached', 'ue_id': 7}</msg>
+<msg time="2026-05-23T19:48:10.161123" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.161151" level="INFO">${body} = {'status': 'attached', 'ue_id': 7}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.871543" elapsed="0.003760"/>
+<status status="PASS" start="2026-05-23T19:48:10.157843" elapsed="0.003316"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.875513" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.161399" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.875369" elapsed="0.000157"/>
+<status status="PASS" start="2026-05-23T19:48:10.161238" elapsed="0.000176"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.875632" level="INFO">${body} = {'status': 'attached', 'ue_id': 7}</msg>
+<msg time="2026-05-23T19:48:10.161538" level="INFO">${body} = {'status': 'attached', 'ue_id': 7}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.875559" elapsed="0.000085"/>
+<status status="PASS" start="2026-05-23T19:48:10.161453" elapsed="0.000098"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.871441" elapsed="0.004223"/>
+<status status="PASS" start="2026-05-23T19:48:10.157754" elapsed="0.003820"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.875852" elapsed="0.000155"/>
+<status status="PASS" start="2026-05-23T19:48:10.161765" elapsed="0.000165"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.875760" elapsed="0.000265"/>
+<status status="PASS" start="2026-05-23T19:48:10.161676" elapsed="0.000272"/>
 </kw>
 <kw name="When I attach UE with ID 7" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.878497" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.878519" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
+<msg time="2026-05-23T19:48:10.164349" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.164372" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.876438" elapsed="0.002089"/>
+<status status="PASS" start="2026-05-23T19:48:10.162375" elapsed="0.002005"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.878688" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.164534" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.878580" elapsed="0.000122"/>
+<status status="PASS" start="2026-05-23T19:48:10.164432" elapsed="0.000115"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.878804" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
+<msg time="2026-05-23T19:48:10.164657" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.878735" elapsed="0.000080"/>
+<status status="PASS" start="2026-05-23T19:48:10.164582" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.876107" elapsed="0.002724"/>
+<status status="PASS" start="2026-05-23T19:48:10.162030" elapsed="0.002655"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.878984" elapsed="0.000145"/>
+<status status="PASS" start="2026-05-23T19:48:10.164836" elapsed="0.000140"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.878907" elapsed="0.000243"/>
+<status status="PASS" start="2026-05-23T19:48:10.164763" elapsed="0.000232"/>
 </kw>
 <kw name="When I get UE with ID 7" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.881121" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.881143" level="INFO">${body} = {'ue_id': 7, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.166786" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.166807" level="INFO">${body} = {'ue_id': 7, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.879301" elapsed="0.001850"/>
+<status status="PASS" start="2026-05-23T19:48:10.165147" elapsed="0.001669"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.881294" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.166969" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.881198" elapsed="0.000108"/>
+<status status="PASS" start="2026-05-23T19:48:10.166866" elapsed="0.000116"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.881415" level="INFO">${body} = {'ue_id': 7, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.167104" level="INFO">${body} = {'ue_id': 7, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.881340" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:48:10.167015" elapsed="0.000101"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.879225" elapsed="0.002218"/>
+<status status="PASS" start="2026-05-23T19:48:10.165072" elapsed="0.002062"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.881589" elapsed="0.000144"/>
+<status status="PASS" start="2026-05-23T19:48:10.167282" elapsed="0.000153"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.881514" elapsed="0.000237"/>
+<status status="PASS" start="2026-05-23T19:48:10.167205" elapsed="0.000250"/>
 </kw>
 <kw name="And UE has default bearer per documentation">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${body}[bearers]</arg>
 <arg>${DOC_DEFAULT_BEARER}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.881883" elapsed="0.000060"/>
+<status status="PASS" start="2026-05-23T19:48:10.167594" elapsed="0.000064"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.881816" elapsed="0.000147"/>
+<status status="PASS" start="2026-05-23T19:48:10.167524" elapsed="0.000152"/>
 </kw>
 <kw name="When I attach UE with ID 101" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.883888" level="INFO">${status_code} = 422</msg>
-<msg time="2026-05-23T19:44:19.883931" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.169240" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.169266" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.882254" elapsed="0.001689"/>
+<status status="PASS" start="2026-05-23T19:48:10.167823" elapsed="0.001453"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.884141" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T19:48:10.169455" level="INFO">${status_code} = 422</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.884010" elapsed="0.000148"/>
+<status status="PASS" start="2026-05-23T19:48:10.169335" elapsed="0.000135"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.884287" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
+<msg time="2026-05-23T19:48:10.169584" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'ue_id'], 'msg': 'Input should be less than or equal to 100', 'input': 101, 'ctx': {'le': 100}}]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.884200" elapsed="0.000100"/>
+<status status="PASS" start="2026-05-23T19:48:10.169510" elapsed="0.000086"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.882109" elapsed="0.002211"/>
+<status status="PASS" start="2026-05-23T19:48:10.167745" elapsed="0.001868"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.884506" elapsed="0.000156"/>
+<status status="PASS" start="2026-05-23T19:48:10.169765" elapsed="0.000135"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.884419" elapsed="0.000264"/>
+<status status="PASS" start="2026-05-23T19:48:10.169694" elapsed="0.000225"/>
 </kw>
 <kw name="When I attach UE with ID 50" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.888478" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.888498" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.173358" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.173382" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.884847" elapsed="0.003658"/>
+<status status="PASS" start="2026-05-23T19:48:10.170058" elapsed="0.003333"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.888670" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.173576" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.888557" elapsed="0.000165"/>
+<status status="PASS" start="2026-05-23T19:48:10.173454" elapsed="0.000173"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.888842" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.173757" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.888760" elapsed="0.000097"/>
+<status status="PASS" start="2026-05-23T19:48:10.173680" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.884765" elapsed="0.004114"/>
+<status status="PASS" start="2026-05-23T19:48:10.169989" elapsed="0.003798"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.889114" elapsed="0.000224"/>
+<status status="PASS" start="2026-05-23T19:48:10.173956" elapsed="0.000159"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.889012" elapsed="0.000349"/>
+<status status="PASS" start="2026-05-23T19:48:10.173876" elapsed="0.000258"/>
 </kw>
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.892313" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.892333" level="INFO">${body} = {'ues': [7, 50]}</msg>
+<msg time="2026-05-23T19:48:10.176060" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.176081" level="INFO">${body} = {'ues': [7, 50]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:19.889535" elapsed="0.002805"/>
+<status status="PASS" start="2026-05-23T19:48:10.174282" elapsed="0.001808"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.892515" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.176254" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.892402" elapsed="0.000125"/>
+<status status="PASS" start="2026-05-23T19:48:10.176144" elapsed="0.000123"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.892638" level="INFO">${body} = {'ues': [7, 50]}</msg>
+<msg time="2026-05-23T19:48:10.176370" level="INFO">${body} = {'ues': [7, 50]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.892561" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:48:10.176301" elapsed="0.000081"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.889431" elapsed="0.003237"/>
+<status status="PASS" start="2026-05-23T19:48:10.174210" elapsed="0.002188"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.892823" elapsed="0.000161"/>
+<status status="PASS" start="2026-05-23T19:48:10.176559" elapsed="0.000166"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.892744" elapsed="0.000259"/>
+<status status="PASS" start="2026-05-23T19:48:10.176480" elapsed="0.000264"/>
 </kw>
 <kw name="And UE list is exactly 7, 50" source_name="And UE list is exactly ${ue_id_list}">
 <kw name="Split String" owner="String">
-<msg time="2026-05-23T19:44:19.893261" level="INFO">@{raw_ids} = [ 7 |  50 ]</msg>
+<msg time="2026-05-23T19:48:10.177018" level="INFO">@{raw_ids} = [ 7 |  50 ]</msg>
 <var>@{raw_ids}</var>
 <arg>${ue_id_list}</arg>
 <arg>separator=,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893186" elapsed="0.000083"/>
+<status status="PASS" start="2026-05-23T19:48:10.176935" elapsed="0.000091"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.893368" level="INFO">${expected} = []</msg>
+<msg time="2026-05-23T19:48:10.177135" level="INFO">${expected} = []</msg>
 <var>${expected}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893303" elapsed="0.000072"/>
+<status status="PASS" start="2026-05-23T19:48:10.177059" elapsed="0.000085"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2026-05-23T19:44:19.893522" level="INFO">${trimmed} = 7</msg>
+<msg time="2026-05-23T19:48:10.177305" level="INFO">${trimmed} = 7</msg>
 <var>${trimmed}</var>
 <arg>${ue_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893473" elapsed="0.000056"/>
+<status status="PASS" start="2026-05-23T19:48:10.177251" elapsed="0.000061"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.893643" level="INFO">${ue_int} = 7</msg>
+<msg time="2026-05-23T19:48:10.177446" level="INFO">${ue_int} = 7</msg>
 <var>${ue_int}</var>
 <arg>${trimmed}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893560" elapsed="0.000090"/>
+<status status="PASS" start="2026-05-23T19:48:10.177345" elapsed="0.000110"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${expected}</arg>
 <arg>${ue_int}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893680" elapsed="0.000066"/>
+<status status="PASS" start="2026-05-23T19:48:10.177494" elapsed="0.000072"/>
 </kw>
 <var name="${ue_id}">7</var>
-<status status="PASS" start="2026-05-23T19:44:19.893445" elapsed="0.000311"/>
+<status status="PASS" start="2026-05-23T19:48:10.177220" elapsed="0.000358"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2026-05-23T19:44:19.893857" level="INFO">${trimmed} = 50</msg>
+<msg time="2026-05-23T19:48:10.177686" level="INFO">${trimmed} = 50</msg>
 <var>${trimmed}</var>
 <arg>${ue_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893810" elapsed="0.000055"/>
+<status status="PASS" start="2026-05-23T19:48:10.177636" elapsed="0.000057"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.893974" level="INFO">${ue_int} = 50</msg>
+<msg time="2026-05-23T19:48:10.177809" level="INFO">${ue_int} = 50</msg>
 <var>${ue_int}</var>
 <arg>${trimmed}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.893895" elapsed="0.000086"/>
+<status status="PASS" start="2026-05-23T19:48:10.177724" elapsed="0.000092"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${expected}</arg>
 <arg>${ue_int}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.894014" elapsed="0.000056"/>
+<status status="PASS" start="2026-05-23T19:48:10.177846" elapsed="0.000046"/>
 </kw>
 <var name="${ue_id}"> 50</var>
-<status status="PASS" start="2026-05-23T19:44:19.893784" elapsed="0.000299"/>
+<status status="PASS" start="2026-05-23T19:48:10.177609" elapsed="0.000294"/>
 </iter>
 <var>${ue_id}</var>
 <value>@{raw_ids}</value>
-<status status="PASS" start="2026-05-23T19:44:19.893394" elapsed="0.000698"/>
+<status status="PASS" start="2026-05-23T19:48:10.177166" elapsed="0.000748"/>
 </for>
 <kw name="Sort List" owner="Collections">
 <arg>${expected}</arg>
 <doc>Sorts the given list in place.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.894126" elapsed="0.000045"/>
+<status status="PASS" start="2026-05-23T19:48:10.177952" elapsed="0.000042"/>
 </kw>
 <kw name="Copy List" owner="Collections">
-<msg time="2026-05-23T19:44:19.894246" level="INFO">${actual} = [7, 50]</msg>
+<msg time="2026-05-23T19:48:10.178074" level="INFO">${actual} = [7, 50]</msg>
 <var>${actual}</var>
 <arg>${body}[ues]</arg>
 <doc>Returns a copy of the given list.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.894200" elapsed="0.000053"/>
+<status status="PASS" start="2026-05-23T19:48:10.178024" elapsed="0.000057"/>
 </kw>
 <kw name="Sort List" owner="Collections">
 <arg>${actual}</arg>
 <doc>Sorts the given list in place.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.894283" elapsed="0.000040"/>
+<status status="PASS" start="2026-05-23T19:48:10.178109" elapsed="0.000041"/>
 </kw>
 <kw name="Lists Should Be Equal" owner="Collections">
 <arg>${actual}</arg>
 <arg>${expected}</arg>
 <doc>Fails if given lists are unequal.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.894353" elapsed="0.000124"/>
+<status status="PASS" start="2026-05-23T19:48:10.178186" elapsed="0.000117"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.893104" elapsed="0.001390"/>
+<status status="PASS" start="2026-05-23T19:48:10.176853" elapsed="0.001468"/>
 </kw>
 <doc>1.3: ponowny attach → błąd, pierwsza sesja bez zmian. 1.2: po błędzie 101 tylko poprawny attach w sieci.</doc>
 <tag>attach</tag>
@@ -594,351 +594,351 @@
 <tag>EPC-SM-1-003</tag>
 <tag>req_1</tag>
 <tag>state</tag>
-<status status="PASS" start="2026-05-23T19:44:19.867314" elapsed="0.027224"/>
+<status status="PASS" start="2026-05-23T19:48:10.154231" elapsed="0.024147"/>
 </test>
 <test id="s1-t4" name="EPC-SM-1-004 Attach - wiele UE (10, 50, 90) i ponowny attach po detach" line="59">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.894765" elapsed="0.007198"/>
+<status status="PASS" start="2026-05-23T19:48:10.178622" elapsed="0.009074"/>
 </kw>
 <kw name="When I attach UE with ID 10" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.906195" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.906238" level="INFO">${body} = {'status': 'attached', 'ue_id': 10}</msg>
+<msg time="2026-05-23T19:48:10.193056" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.193086" level="INFO">${body} = {'status': 'attached', 'ue_id': 10}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.902323" elapsed="0.003925"/>
+<status status="PASS" start="2026-05-23T19:48:10.187988" elapsed="0.005107"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.906507" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.193337" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.906346" elapsed="0.000174"/>
+<status status="PASS" start="2026-05-23T19:48:10.193167" elapsed="0.000185"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.906631" level="INFO">${body} = {'status': 'attached', 'ue_id': 10}</msg>
+<msg time="2026-05-23T19:48:10.193466" level="INFO">${body} = {'status': 'attached', 'ue_id': 10}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.906555" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:48:10.193389" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.902194" elapsed="0.004470"/>
+<status status="PASS" start="2026-05-23T19:48:10.187863" elapsed="0.005636"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.906907" elapsed="0.000178"/>
+<status status="PASS" start="2026-05-23T19:48:10.193708" elapsed="0.000163"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.906814" elapsed="0.000294"/>
+<status status="PASS" start="2026-05-23T19:48:10.193627" elapsed="0.000264"/>
 </kw>
 <kw name="When I attach UE with ID 50" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.911582" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.911609" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.198150" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.198174" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.907261" elapsed="0.004357"/>
+<status status="PASS" start="2026-05-23T19:48:10.194039" elapsed="0.004144"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.911806" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.198356" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.911683" elapsed="0.000137"/>
+<status status="PASS" start="2026-05-23T19:48:10.198242" elapsed="0.000128"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.911935" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.198487" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.911856" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.198408" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.907183" elapsed="0.004783"/>
+<status status="PASS" start="2026-05-23T19:48:10.193963" elapsed="0.004556"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.912136" elapsed="0.000169"/>
+<status status="PASS" start="2026-05-23T19:48:10.198720" elapsed="0.000190"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.912055" elapsed="0.000270"/>
+<status status="PASS" start="2026-05-23T19:48:10.198603" elapsed="0.000332"/>
 </kw>
 <kw name="When I attach UE with ID 90" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.915589" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.915616" level="INFO">${body} = {'status': 'attached', 'ue_id': 90}</msg>
+<msg time="2026-05-23T19:48:10.202589" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.202615" level="INFO">${body} = {'status': 'attached', 'ue_id': 90}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.912486" elapsed="0.003138"/>
+<status status="PASS" start="2026-05-23T19:48:10.199103" elapsed="0.003522"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.915808" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.202807" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.915686" elapsed="0.000135"/>
+<status status="PASS" start="2026-05-23T19:48:10.202688" elapsed="0.000133"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.915933" level="INFO">${body} = {'status': 'attached', 'ue_id': 90}</msg>
+<msg time="2026-05-23T19:48:10.202937" level="INFO">${body} = {'status': 'attached', 'ue_id': 90}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.915856" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:48:10.202860" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.912406" elapsed="0.003557"/>
+<status status="PASS" start="2026-05-23T19:48:10.199019" elapsed="0.003948"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.916122" elapsed="0.000173"/>
+<status status="PASS" start="2026-05-23T19:48:10.203127" elapsed="0.000170"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.916044" elapsed="0.000270"/>
+<status status="PASS" start="2026-05-23T19:48:10.203048" elapsed="0.000268"/>
 </kw>
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.918055" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.918072" level="INFO">${body} = {'ues': [10, 50, 90]}</msg>
+<msg time="2026-05-23T19:48:10.205617" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.205643" level="INFO">${body} = {'ues': [10, 50, 90]}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:19.916483" elapsed="0.001596"/>
+<status status="PASS" start="2026-05-23T19:48:10.203452" elapsed="0.002200"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.918207" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.205845" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.918119" elapsed="0.000100"/>
+<status status="PASS" start="2026-05-23T19:48:10.205719" elapsed="0.000140"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.918321" level="INFO">${body} = {'ues': [10, 50, 90]}</msg>
+<msg time="2026-05-23T19:48:10.205976" level="INFO">${body} = {'ues': [10, 50, 90]}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.918251" elapsed="0.000081"/>
+<status status="PASS" start="2026-05-23T19:48:10.205897" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.916381" elapsed="0.001967"/>
+<status status="PASS" start="2026-05-23T19:48:10.203379" elapsed="0.002628"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.918482" elapsed="0.000137"/>
+<status status="PASS" start="2026-05-23T19:48:10.206177" elapsed="0.000164"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.918414" elapsed="0.000223"/>
+<status status="PASS" start="2026-05-23T19:48:10.206092" elapsed="0.000269"/>
 </kw>
 <kw name="And UE list is exactly 10, 50, 90" source_name="And UE list is exactly ${ue_id_list}">
 <kw name="Split String" owner="String">
-<msg time="2026-05-23T19:44:19.918885" level="INFO">@{raw_ids} = [ 10 |  50 |  90 ]</msg>
+<msg time="2026-05-23T19:48:10.206615" level="INFO">@{raw_ids} = [ 10 |  50 |  90 ]</msg>
 <var>@{raw_ids}</var>
 <arg>${ue_id_list}</arg>
 <arg>separator=,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.918816" elapsed="0.000077"/>
+<status status="PASS" start="2026-05-23T19:48:10.206544" elapsed="0.000080"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.918987" level="INFO">${expected} = []</msg>
+<msg time="2026-05-23T19:48:10.206723" level="INFO">${expected} = []</msg>
 <var>${expected}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.918926" elapsed="0.000068"/>
+<status status="PASS" start="2026-05-23T19:48:10.206658" elapsed="0.000072"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2026-05-23T19:44:19.919152" level="INFO">${trimmed} = 10</msg>
+<msg time="2026-05-23T19:48:10.206875" level="INFO">${trimmed} = 10</msg>
 <var>${trimmed}</var>
 <arg>${ue_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919097" elapsed="0.000062"/>
+<status status="PASS" start="2026-05-23T19:48:10.206826" elapsed="0.000056"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.919282" level="INFO">${ue_int} = 10</msg>
+<msg time="2026-05-23T19:48:10.207008" level="INFO">${ue_int} = 10</msg>
 <var>${ue_int}</var>
 <arg>${trimmed}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919193" elapsed="0.000097"/>
+<status status="PASS" start="2026-05-23T19:48:10.206912" elapsed="0.000104"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${expected}</arg>
 <arg>${ue_int}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919322" elapsed="0.000062"/>
+<status status="PASS" start="2026-05-23T19:48:10.207047" elapsed="0.000058"/>
 </kw>
 <var name="${ue_id}">10</var>
-<status status="PASS" start="2026-05-23T19:44:19.919066" elapsed="0.000329"/>
+<status status="PASS" start="2026-05-23T19:48:10.206798" elapsed="0.000317"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2026-05-23T19:44:19.919498" level="INFO">${trimmed} = 50</msg>
+<msg time="2026-05-23T19:48:10.207217" level="INFO">${trimmed} = 50</msg>
 <var>${trimmed}</var>
 <arg>${ue_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919450" elapsed="0.000056"/>
+<status status="PASS" start="2026-05-23T19:48:10.207168" elapsed="0.000057"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.919613" level="INFO">${ue_int} = 50</msg>
+<msg time="2026-05-23T19:48:10.207330" level="INFO">${ue_int} = 50</msg>
 <var>${ue_int}</var>
 <arg>${trimmed}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919536" elapsed="0.000084"/>
+<status status="PASS" start="2026-05-23T19:48:10.207254" elapsed="0.000083"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${expected}</arg>
 <arg>${ue_int}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919649" elapsed="0.000060"/>
+<status status="PASS" start="2026-05-23T19:48:10.207366" elapsed="0.000047"/>
 </kw>
 <var name="${ue_id}"> 50</var>
-<status status="PASS" start="2026-05-23T19:44:19.919423" elapsed="0.000296"/>
+<status status="PASS" start="2026-05-23T19:48:10.207143" elapsed="0.000280"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2026-05-23T19:44:19.919814" level="INFO">${trimmed} = 90</msg>
+<msg time="2026-05-23T19:48:10.207518" level="INFO">${trimmed} = 90</msg>
 <var>${trimmed}</var>
 <arg>${ue_id}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919769" elapsed="0.000051"/>
+<status status="PASS" start="2026-05-23T19:48:10.207474" elapsed="0.000051"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.919979" level="INFO">${ue_int} = 90</msg>
+<msg time="2026-05-23T19:48:10.207689" level="INFO">${ue_int} = 90</msg>
 <var>${ue_int}</var>
 <arg>${trimmed}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.919896" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.207598" elapsed="0.000098"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${expected}</arg>
 <arg>${ue_int}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.920017" elapsed="0.000045"/>
+<status status="PASS" start="2026-05-23T19:48:10.207727" elapsed="0.000048"/>
 </kw>
 <var name="${ue_id}"> 90</var>
-<status status="PASS" start="2026-05-23T19:44:19.919743" elapsed="0.000329"/>
+<status status="PASS" start="2026-05-23T19:48:10.207448" elapsed="0.000337"/>
 </iter>
 <var>${ue_id}</var>
 <value>@{raw_ids}</value>
-<status status="PASS" start="2026-05-23T19:44:19.919015" elapsed="0.001065"/>
+<status status="PASS" start="2026-05-23T19:48:10.206749" elapsed="0.001045"/>
 </for>
 <kw name="Sort List" owner="Collections">
 <arg>${expected}</arg>
 <doc>Sorts the given list in place.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.920111" elapsed="0.000038"/>
+<status status="PASS" start="2026-05-23T19:48:10.207825" elapsed="0.000041"/>
 </kw>
 <kw name="Copy List" owner="Collections">
-<msg time="2026-05-23T19:44:19.920223" level="INFO">${actual} = [10, 50, 90]</msg>
+<msg time="2026-05-23T19:48:10.207956" level="INFO">${actual} = [10, 50, 90]</msg>
 <var>${actual}</var>
 <arg>${body}[ues]</arg>
 <doc>Returns a copy of the given list.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.920177" elapsed="0.000052"/>
+<status status="PASS" start="2026-05-23T19:48:10.207903" elapsed="0.000060"/>
 </kw>
 <kw name="Sort List" owner="Collections">
 <arg>${actual}</arg>
 <doc>Sorts the given list in place.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.920255" elapsed="0.000042"/>
+<status status="PASS" start="2026-05-23T19:48:10.207991" elapsed="0.000036"/>
 </kw>
 <kw name="Lists Should Be Equal" owner="Collections">
 <arg>${actual}</arg>
 <arg>${expected}</arg>
 <doc>Fails if given lists are unequal.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.920334" elapsed="0.000068"/>
+<status status="PASS" start="2026-05-23T19:48:10.208056" elapsed="0.000067"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.918738" elapsed="0.001680"/>
+<status status="PASS" start="2026-05-23T19:48:10.206465" elapsed="0.001675"/>
 </kw>
 <kw name="When I attach UE with ID 50" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.922123" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.922139" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
+<msg time="2026-05-23T19:48:10.210442" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.210458" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.920576" elapsed="0.001570"/>
+<status status="PASS" start="2026-05-23T19:48:10.208291" elapsed="0.002174"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.922282" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.210601" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.922190" elapsed="0.000104"/>
+<status status="PASS" start="2026-05-23T19:48:10.210512" elapsed="0.000100"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.922401" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
+<msg time="2026-05-23T19:48:10.210726" level="INFO">${body} = {'detail': 'UE already attached'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.922328" elapsed="0.000084"/>
+<status status="PASS" start="2026-05-23T19:48:10.210646" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.920503" elapsed="0.001925"/>
+<status status="PASS" start="2026-05-23T19:48:10.208217" elapsed="0.002537"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.922606" elapsed="0.000184"/>
+<status status="PASS" start="2026-05-23T19:48:10.210884" elapsed="0.000125"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.922494" elapsed="0.000323"/>
+<status status="PASS" start="2026-05-23T19:48:10.210818" elapsed="0.000210"/>
 </kw>
 <kw name="When I detach UE with ID 50" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.927088" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.927111" level="INFO">${body} = {'status': 'detached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.215670" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.215692" level="INFO">${body} = {'status': 'detached', 'ue_id': 50}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.923482" elapsed="0.003637"/>
+<status status="PASS" start="2026-05-23T19:48:10.211389" elapsed="0.004310"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.927285" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.215880" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.927176" elapsed="0.000122"/>
+<status status="PASS" start="2026-05-23T19:48:10.215763" elapsed="0.000129"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.927404" level="INFO">${body} = {'status': 'detached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.215998" level="INFO">${body} = {'status': 'detached', 'ue_id': 50}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.927332" elapsed="0.000083"/>
+<status status="PASS" start="2026-05-23T19:48:10.215926" elapsed="0.000083"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.922908" elapsed="0.004524"/>
+<status status="PASS" start="2026-05-23T19:48:10.211094" elapsed="0.004933"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.927588" elapsed="0.000159"/>
+<status status="PASS" start="2026-05-23T19:48:10.216191" elapsed="0.000159"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.927514" elapsed="0.000252"/>
+<status status="PASS" start="2026-05-23T19:48:10.216112" elapsed="0.000257"/>
 </kw>
 <kw name="When I attach UE with ID 50" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.931569" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.931591" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.219313" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.219331" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.927916" elapsed="0.003682"/>
+<status status="PASS" start="2026-05-23T19:48:10.216512" elapsed="0.002826"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.931739" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.219474" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.931645" elapsed="0.000107"/>
+<status status="PASS" start="2026-05-23T19:48:10.219382" elapsed="0.000105"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.931872" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
+<msg time="2026-05-23T19:48:10.219596" level="INFO">${body} = {'status': 'attached', 'ue_id': 50}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.931793" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.219520" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.927841" elapsed="0.004061"/>
+<status status="PASS" start="2026-05-23T19:48:10.216439" elapsed="0.003185"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.932179" elapsed="0.000155"/>
+<status status="PASS" start="2026-05-23T19:48:10.219759" elapsed="0.000142"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.932099" elapsed="0.000255"/>
+<status status="PASS" start="2026-05-23T19:48:10.219690" elapsed="0.000229"/>
 </kw>
 <doc>1.1: wiele UE w sieci. 1.1+2.1: ten sam ID po detach można ponownie dołączyć.</doc>
 <tag>attach</tag>
@@ -946,322 +946,322 @@
 <tag>multi_ue</tag>
 <tag>reattach</tag>
 <tag>req_1</tag>
-<status status="PASS" start="2026-05-23T19:44:19.894646" elapsed="0.037754"/>
+<status status="PASS" start="2026-05-23T19:48:10.178496" elapsed="0.041459"/>
 </test>
 <test id="s1-t5" name="EPC-SM-2-001 Detach - sukces i brak podłączenia po operacji" line="80">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.932717" elapsed="0.007409"/>
+<status status="PASS" start="2026-05-23T19:48:10.220223" elapsed="0.009501"/>
 </kw>
 <kw name="When I attach UE with ID 15" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.944173" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.944199" level="INFO">${body} = {'status': 'attached', 'ue_id': 15}</msg>
+<msg time="2026-05-23T19:48:10.233649" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.233675" level="INFO">${body} = {'status': 'attached', 'ue_id': 15}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.940383" elapsed="0.003825"/>
+<status status="PASS" start="2026-05-23T19:48:10.230013" elapsed="0.003672"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.944405" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.233883" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.944277" elapsed="0.000142"/>
+<status status="PASS" start="2026-05-23T19:48:10.233753" elapsed="0.000143"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.944542" level="INFO">${body} = {'status': 'attached', 'ue_id': 15}</msg>
+<msg time="2026-05-23T19:48:10.234009" level="INFO">${body} = {'status': 'attached', 'ue_id': 15}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.944466" elapsed="0.000122"/>
+<status status="PASS" start="2026-05-23T19:48:10.233933" elapsed="0.000118"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.940274" elapsed="0.004336"/>
+<status status="PASS" start="2026-05-23T19:48:10.229899" elapsed="0.004175"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.944843" elapsed="0.000185"/>
+<status status="PASS" start="2026-05-23T19:48:10.234244" elapsed="0.000172"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.944699" elapsed="0.000352"/>
+<status status="PASS" start="2026-05-23T19:48:10.234161" elapsed="0.000275"/>
 </kw>
 <kw name="When I detach UE with ID 15" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.948351" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.948372" level="INFO">${body} = {'status': 'detached', 'ue_id': 15}</msg>
+<msg time="2026-05-23T19:48:10.237443" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.237467" level="INFO">${body} = {'status': 'detached', 'ue_id': 15}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.945219" elapsed="0.003160"/>
+<status status="PASS" start="2026-05-23T19:48:10.234620" elapsed="0.002856"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.948544" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.237656" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.948433" elapsed="0.000124"/>
+<status status="PASS" start="2026-05-23T19:48:10.237542" elapsed="0.000128"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.948666" level="INFO">${body} = {'status': 'detached', 'ue_id': 15}</msg>
+<msg time="2026-05-23T19:48:10.237783" level="INFO">${body} = {'status': 'detached', 'ue_id': 15}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.948593" elapsed="0.000085"/>
+<status status="PASS" start="2026-05-23T19:48:10.237707" elapsed="0.000088"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.945134" elapsed="0.003561"/>
+<status status="PASS" start="2026-05-23T19:48:10.234510" elapsed="0.003303"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.948851" elapsed="0.000155"/>
+<status status="PASS" start="2026-05-23T19:48:10.237963" elapsed="0.000158"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.948775" elapsed="0.000254"/>
+<status status="PASS" start="2026-05-23T19:48:10.237888" elapsed="0.000255"/>
 </kw>
 <kw name="And field status has value detached" source_name="And field ${field_name} has value ${expected_value}">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.949179" elapsed="0.000105"/>
+<status status="PASS" start="2026-05-23T19:48:10.238293" elapsed="0.000101"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.949098" elapsed="0.000204"/>
+<status status="PASS" start="2026-05-23T19:48:10.238213" elapsed="0.000199"/>
 </kw>
 <kw name="When I query attached UE state for ID 15" source_name="When I query attached UE state for ID ${ue_id}">
 <kw name="When I get UE with ID ${ue_id}" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.951525" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.951551" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.240510" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.240538" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.949698" elapsed="0.001863"/>
+<status status="PASS" start="2026-05-23T19:48:10.238678" elapsed="0.001869"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.951730" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.240756" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.951616" elapsed="0.000127"/>
+<status status="PASS" start="2026-05-23T19:48:10.240619" elapsed="0.000151"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.951861" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.240900" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.951781" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:48:10.240811" elapsed="0.000101"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.949557" elapsed="0.002334"/>
+<status status="PASS" start="2026-05-23T19:48:10.238605" elapsed="0.002327"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.949420" elapsed="0.002484"/>
+<status status="PASS" start="2026-05-23T19:48:10.238479" elapsed="0.002467"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.952064" elapsed="0.000157"/>
+<status status="PASS" start="2026-05-23T19:48:10.241124" elapsed="0.000167"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.951985" elapsed="0.000257"/>
+<status status="PASS" start="2026-05-23T19:48:10.241038" elapsed="0.000275"/>
 </kw>
 <doc>2.1: poprawny detach; odczyt stanu podłączonego UE → błąd.</doc>
 <tag>detach</tag>
 <tag>EPC-SM-2-001</tag>
 <tag>happy_path</tag>
 <tag>req_2</tag>
-<status status="PASS" start="2026-05-23T19:44:19.932541" elapsed="0.019744"/>
+<status status="PASS" start="2026-05-23T19:48:10.220065" elapsed="0.021288"/>
 </test>
 <test id="s1-t6" name="EPC-SM-2-002 Detach - scenariusze błędów (niepodłączony, powtórzenie, poza zakresem)" line="91">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.952526" elapsed="0.002434"/>
+<status status="PASS" start="2026-05-23T19:48:10.241601" elapsed="0.002514"/>
 </kw>
 <kw name="When I detach UE with ID 88" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.956816" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.956841" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.245789" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.245806" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.955196" elapsed="0.001653"/>
+<status status="PASS" start="2026-05-23T19:48:10.244334" elapsed="0.001479"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.957049" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.246006" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.956916" elapsed="0.000147"/>
+<status status="PASS" start="2026-05-23T19:48:10.245859" elapsed="0.000166"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.957189" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.246179" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.957102" elapsed="0.000099"/>
+<status status="PASS" start="2026-05-23T19:48:10.246076" elapsed="0.000118"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.955093" elapsed="0.002128"/>
+<status status="PASS" start="2026-05-23T19:48:10.244235" elapsed="0.001980"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.957394" elapsed="0.000156"/>
+<status status="PASS" start="2026-05-23T19:48:10.246375" elapsed="0.000160"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.957306" elapsed="0.000265"/>
+<status status="PASS" start="2026-05-23T19:48:10.246294" elapsed="0.000263"/>
 </kw>
 <kw name="When I attach UE with ID 16" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.961445" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.961474" level="INFO">${body} = {'status': 'attached', 'ue_id': 16}</msg>
+<msg time="2026-05-23T19:48:10.249888" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.249906" level="INFO">${body} = {'status': 'attached', 'ue_id': 16}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.957721" elapsed="0.003761"/>
+<status status="PASS" start="2026-05-23T19:48:10.246716" elapsed="0.003198"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.961640" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.250061" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.961536" elapsed="0.000122"/>
+<status status="PASS" start="2026-05-23T19:48:10.249964" elapsed="0.000109"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.961769" level="INFO">${body} = {'status': 'attached', 'ue_id': 16}</msg>
+<msg time="2026-05-23T19:48:10.250179" level="INFO">${body} = {'status': 'attached', 'ue_id': 16}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.961693" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:48:10.250105" elapsed="0.000085"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.957644" elapsed="0.004155"/>
+<status status="PASS" start="2026-05-23T19:48:10.246635" elapsed="0.003572"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.961957" elapsed="0.000186"/>
+<status status="PASS" start="2026-05-23T19:48:10.250343" elapsed="0.000139"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.961879" elapsed="0.000320"/>
+<status status="PASS" start="2026-05-23T19:48:10.250274" elapsed="0.000264"/>
 </kw>
 <kw name="When I detach UE with ID 16" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.965316" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.965342" level="INFO">${body} = {'status': 'detached', 'ue_id': 16}</msg>
+<msg time="2026-05-23T19:48:10.253361" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.253382" level="INFO">${body} = {'status': 'detached', 'ue_id': 16}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.962364" elapsed="0.002986"/>
+<status status="PASS" start="2026-05-23T19:48:10.250679" elapsed="0.002712"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.965534" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.253544" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.965407" elapsed="0.000153"/>
+<status status="PASS" start="2026-05-23T19:48:10.253440" elapsed="0.000118"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.965802" level="INFO">${body} = {'status': 'detached', 'ue_id': 16}</msg>
+<msg time="2026-05-23T19:48:10.253674" level="INFO">${body} = {'status': 'detached', 'ue_id': 16}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.965599" elapsed="0.000228"/>
+<status status="PASS" start="2026-05-23T19:48:10.253596" elapsed="0.000090"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.962275" elapsed="0.003583"/>
+<status status="PASS" start="2026-05-23T19:48:10.250605" elapsed="0.003098"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.966061" elapsed="0.000192"/>
+<status status="PASS" start="2026-05-23T19:48:10.253847" elapsed="0.000145"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.965971" elapsed="0.000304"/>
+<status status="PASS" start="2026-05-23T19:48:10.253774" elapsed="0.000237"/>
 </kw>
 <kw name="When I detach UE with ID 16" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.968415" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.968434" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.255914" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.255938" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.966429" elapsed="0.002013"/>
+<status status="PASS" start="2026-05-23T19:48:10.254156" elapsed="0.001791"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.968590" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.256134" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.968492" elapsed="0.000111"/>
+<status status="PASS" start="2026-05-23T19:48:10.256012" elapsed="0.000137"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.968712" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.256266" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.968637" elapsed="0.000086"/>
+<status status="PASS" start="2026-05-23T19:48:10.256186" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.966351" elapsed="0.002389"/>
+<status status="PASS" start="2026-05-23T19:48:10.254082" elapsed="0.002215"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.968896" elapsed="0.000140"/>
+<status status="PASS" start="2026-05-23T19:48:10.256465" elapsed="0.000155"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.968819" elapsed="0.000237"/>
+<status status="PASS" start="2026-05-23T19:48:10.256382" elapsed="0.000259"/>
 </kw>
 <kw name="When I detach UE with ID 101" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.970851" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.970870" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.258349" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.258365" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.969212" elapsed="0.001666"/>
+<status status="PASS" start="2026-05-23T19:48:10.256803" elapsed="0.001569"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.971156" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.258502" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.970994" elapsed="0.000184"/>
+<status status="PASS" start="2026-05-23T19:48:10.258416" elapsed="0.000098"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.971314" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.258616" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.971231" elapsed="0.000096"/>
+<status status="PASS" start="2026-05-23T19:48:10.258546" elapsed="0.000081"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.969134" elapsed="0.002214"/>
+<status status="PASS" start="2026-05-23T19:48:10.256723" elapsed="0.001920"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.971520" elapsed="0.000150"/>
+<status status="PASS" start="2026-05-23T19:48:10.258774" elapsed="0.000119"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.971441" elapsed="0.000250"/>
+<status status="PASS" start="2026-05-23T19:48:10.258706" elapsed="0.000205"/>
 </kw>
 <kw name="When I detach UE with ID ${DOC_UE_ID_MIN}" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.974013" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.974034" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.260988" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.261011" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.971884" elapsed="0.002158"/>
+<status status="PASS" start="2026-05-23T19:48:10.259086" elapsed="0.001932"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.974195" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.261184" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.974092" elapsed="0.000117"/>
+<status status="PASS" start="2026-05-23T19:48:10.261077" elapsed="0.000120"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.974323" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.261308" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.974247" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:48:10.261232" elapsed="0.000088"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.971800" elapsed="0.002553"/>
+<status status="PASS" start="2026-05-23T19:48:10.259012" elapsed="0.002327"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.974512" elapsed="0.000150"/>
+<status status="PASS" start="2026-05-23T19:48:10.261491" elapsed="0.000148"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.974438" elapsed="0.000245"/>
+<status status="PASS" start="2026-05-23T19:48:10.261416" elapsed="0.000243"/>
 </kw>
 <doc>2.3 + Założenia: nigdy nie attachowany (88), drugi detach (16), ID 101 poza zakresem, UE=0 niepodłączony.</doc>
 <tag>detach</tag>
@@ -1269,241 +1269,241 @@
 <tag>EPC-SM-2-002</tag>
 <tag>req_2</tag>
 <tag>validation</tag>
-<status status="PASS" start="2026-05-23T19:44:19.952388" elapsed="0.022337"/>
+<status status="PASS" start="2026-05-23T19:48:10.241463" elapsed="0.020266"/>
 </test>
 <test id="s1-t7" name="EPC-SM-2-003 Detach - izolacja sesji i cykl attach/detach na UE=0" line="107">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:19.974990" elapsed="0.002508"/>
+<status status="PASS" start="2026-05-23T19:48:10.262071" elapsed="0.002449"/>
 </kw>
 <kw name="When I attach UE with ID 61" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.981047" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.981073" level="INFO">${body} = {'status': 'attached', 'ue_id': 61}</msg>
+<msg time="2026-05-23T19:48:10.267724" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.267741" level="INFO">${body} = {'status': 'attached', 'ue_id': 61}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.977732" elapsed="0.003350"/>
+<status status="PASS" start="2026-05-23T19:48:10.264759" elapsed="0.002989"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.981277" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.267884" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.981147" elapsed="0.000145"/>
+<status status="PASS" start="2026-05-23T19:48:10.267791" elapsed="0.000105"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.981421" level="INFO">${body} = {'status': 'attached', 'ue_id': 61}</msg>
+<msg time="2026-05-23T19:48:10.268001" level="INFO">${body} = {'status': 'attached', 'ue_id': 61}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.981336" elapsed="0.000145"/>
+<status status="PASS" start="2026-05-23T19:48:10.267929" elapsed="0.000119"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.977625" elapsed="0.003878"/>
+<status status="PASS" start="2026-05-23T19:48:10.264648" elapsed="0.003419"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.981668" elapsed="0.000178"/>
+<status status="PASS" start="2026-05-23T19:48:10.268208" elapsed="0.000135"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.981584" elapsed="0.000285"/>
+<status status="PASS" start="2026-05-23T19:48:10.268138" elapsed="0.000223"/>
 </kw>
 <kw name="When I attach UE with ID 62" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.985448" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.985472" level="INFO">${body} = {'status': 'attached', 'ue_id': 62}</msg>
+<msg time="2026-05-23T19:48:10.271136" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.271153" level="INFO">${body} = {'status': 'attached', 'ue_id': 62}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.982036" elapsed="0.003445"/>
+<status status="PASS" start="2026-05-23T19:48:10.268500" elapsed="0.002660"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.985654" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.271282" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.985541" elapsed="0.000126"/>
+<status status="PASS" start="2026-05-23T19:48:10.271198" elapsed="0.000096"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.985785" level="INFO">${body} = {'status': 'attached', 'ue_id': 62}</msg>
+<msg time="2026-05-23T19:48:10.271403" level="INFO">${body} = {'status': 'attached', 'ue_id': 62}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.985706" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.271326" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.981951" elapsed="0.003864"/>
+<status status="PASS" start="2026-05-23T19:48:10.268429" elapsed="0.003002"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.985973" elapsed="0.000162"/>
+<status status="PASS" start="2026-05-23T19:48:10.271555" elapsed="0.000142"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.985894" elapsed="0.000268"/>
+<status status="PASS" start="2026-05-23T19:48:10.271490" elapsed="0.000230"/>
 </kw>
 <kw name="When I detach UE with ID 61" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.989005" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.989023" level="INFO">${body} = {'status': 'detached', 'ue_id': 61}</msg>
+<msg time="2026-05-23T19:48:10.274745" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.274772" level="INFO">${body} = {'status': 'detached', 'ue_id': 61}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.986337" elapsed="0.002693"/>
+<status status="PASS" start="2026-05-23T19:48:10.271859" elapsed="0.002922"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.989175" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.274995" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.989075" elapsed="0.000112"/>
+<status status="PASS" start="2026-05-23T19:48:10.274853" elapsed="0.000155"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.989296" level="INFO">${body} = {'status': 'detached', 'ue_id': 61}</msg>
+<msg time="2026-05-23T19:48:10.275129" level="INFO">${body} = {'status': 'detached', 'ue_id': 61}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.989222" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:48:10.275045" elapsed="0.000097"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.986243" elapsed="0.003083"/>
+<status status="PASS" start="2026-05-23T19:48:10.271786" elapsed="0.003376"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.989468" elapsed="0.000146"/>
+<status status="PASS" start="2026-05-23T19:48:10.275335" elapsed="0.000175"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.989395" elapsed="0.000237"/>
+<status status="PASS" start="2026-05-23T19:48:10.275252" elapsed="0.000278"/>
 </kw>
 <kw name="When I query attached UE state for ID 61" source_name="When I query attached UE state for ID ${ue_id}">
 <kw name="When I get UE with ID ${ue_id}" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.991762" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:19.991783" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.277296" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.277316" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.989909" elapsed="0.001882"/>
+<status status="PASS" start="2026-05-23T19:48:10.275830" elapsed="0.001493"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.991963" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.277469" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.991846" elapsed="0.000130"/>
+<status status="PASS" start="2026-05-23T19:48:10.277370" elapsed="0.000112"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.992090" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.277596" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.992011" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.277516" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.989830" elapsed="0.002290"/>
+<status status="PASS" start="2026-05-23T19:48:10.275747" elapsed="0.001879"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.989700" elapsed="0.002433"/>
+<status status="PASS" start="2026-05-23T19:48:10.275609" elapsed="0.002029"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.992280" elapsed="0.000146"/>
+<status status="PASS" start="2026-05-23T19:48:10.277780" elapsed="0.000142"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.992206" elapsed="0.000241"/>
+<status status="PASS" start="2026-05-23T19:48:10.277709" elapsed="0.000232"/>
 </kw>
 <kw name="When I query attached UE state for ID 62" source_name="When I query attached UE state for ID ${ue_id}">
 <kw name="When I get UE with ID ${ue_id}" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.994799" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.994822" level="INFO">${body} = {'ue_id': 62, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.280440" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.280462" level="INFO">${body} = {'ue_id': 62, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.993034" elapsed="0.001797"/>
+<status status="PASS" start="2026-05-23T19:48:10.278537" elapsed="0.001932"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.994988" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.280623" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.994881" elapsed="0.000121"/>
+<status status="PASS" start="2026-05-23T19:48:10.280519" elapsed="0.000117"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.995125" level="INFO">${body} = {'ue_id': 62, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.280748" level="INFO">${body} = {'ue_id': 62, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.995039" elapsed="0.000099"/>
+<status status="PASS" start="2026-05-23T19:48:10.280669" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.992955" elapsed="0.002200"/>
+<status status="PASS" start="2026-05-23T19:48:10.278450" elapsed="0.002326"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.992529" elapsed="0.002638"/>
+<status status="PASS" start="2026-05-23T19:48:10.278021" elapsed="0.002766"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.995315" elapsed="0.000155"/>
+<status status="PASS" start="2026-05-23T19:48:10.280927" elapsed="0.000153"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.995239" elapsed="0.000249"/>
+<status status="PASS" start="2026-05-23T19:48:10.280856" elapsed="0.000242"/>
 </kw>
 <kw name="When I attach UE with ID ${DOC_UE_ID_MAX}" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:19.999001" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:19.999025" level="INFO">${body} = {'status': 'attached', 'ue_id': 100}</msg>
+<msg time="2026-05-23T19:48:10.285850" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.285870" level="INFO">${body} = {'status': 'attached', 'ue_id': 100}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:19.995681" elapsed="0.003396"/>
+<status status="PASS" start="2026-05-23T19:48:10.281287" elapsed="0.004618"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.999264" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.286062" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.999144" elapsed="0.000134"/>
+<status status="PASS" start="2026-05-23T19:48:10.285956" elapsed="0.000120"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:19.999390" level="INFO">${body} = {'status': 'attached', 'ue_id': 100}</msg>
+<msg time="2026-05-23T19:48:10.286186" level="INFO">${body} = {'status': 'attached', 'ue_id': 100}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.999314" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:48:10.286110" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.995597" elapsed="0.003824"/>
+<status status="PASS" start="2026-05-23T19:48:10.281204" elapsed="0.005011"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:19.999584" elapsed="0.000251"/>
+<status status="PASS" start="2026-05-23T19:48:10.286359" elapsed="0.000149"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.999501" elapsed="0.000360"/>
+<status status="PASS" start="2026-05-23T19:48:10.286286" elapsed="0.000242"/>
 </kw>
 <kw name="When I detach UE with ID ${DOC_UE_ID_MAX}" source_name="When I detach UE with ID ${ue_id}">
 <kw name="Detach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.003928" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.003954" level="INFO">${body} = {'status': 'detached', 'ue_id': 100}</msg>
+<msg time="2026-05-23T19:48:10.289787" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.289813" level="INFO">${body} = {'status': 'detached', 'ue_id': 100}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.000084" elapsed="0.003879"/>
+<status status="PASS" start="2026-05-23T19:48:10.286712" elapsed="0.003111"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.004156" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.290018" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.004028" elapsed="0.000143"/>
+<status status="PASS" start="2026-05-23T19:48:10.289891" elapsed="0.000141"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.004298" level="INFO">${body} = {'status': 'detached', 'ue_id': 100}</msg>
+<msg time="2026-05-23T19:48:10.290157" level="INFO">${body} = {'status': 'detached', 'ue_id': 100}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.004211" elapsed="0.000099"/>
+<status status="PASS" start="2026-05-23T19:48:10.290075" elapsed="0.000094"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:19.999991" elapsed="0.004339"/>
+<status status="PASS" start="2026-05-23T19:48:10.286631" elapsed="0.003558"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.004496" elapsed="0.000167"/>
+<status status="PASS" start="2026-05-23T19:48:10.290356" elapsed="0.000166"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.004410" elapsed="0.000273"/>
+<status status="PASS" start="2026-05-23T19:48:10.290274" elapsed="0.000267"/>
 </kw>
 <doc>2.1: detach jednego UE nie usuwa drugiego. Założenia: attach/detach na granicy UE=100.</doc>
 <tag>boundary</tag>
@@ -1511,380 +1511,380 @@
 <tag>EPC-SM-2-003</tag>
 <tag>multi_ue</tag>
 <tag>req_2</tag>
-<status status="PASS" start="2026-05-23T19:44:19.974834" elapsed="0.029893"/>
+<status status="PASS" start="2026-05-23T19:48:10.261904" elapsed="0.028678"/>
 </test>
 <test id="s1-t8" name="EPC-SM-9-001 Reset - stan początkowy i wyczyszczenie wielu sesji" line="127">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:20.004989" elapsed="0.003693"/>
+<status status="PASS" start="2026-05-23T19:48:10.290861" elapsed="0.004173"/>
 </kw>
 <kw name="And simulator has no attached UEs">
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.010818" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.010839" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.297224" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.297245" level="INFO">${body} = {'ues': []}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:20.009006" elapsed="0.001841"/>
+<status status="PASS" start="2026-05-23T19:48:10.295307" elapsed="0.001945"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.011024" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.297421" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.010900" elapsed="0.000137"/>
+<status status="PASS" start="2026-05-23T19:48:10.297305" elapsed="0.000130"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.011154" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.297546" level="INFO">${body} = {'ues': []}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.011073" elapsed="0.000093"/>
+<status status="PASS" start="2026-05-23T19:48:10.297470" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.008935" elapsed="0.002250"/>
+<status status="PASS" start="2026-05-23T19:48:10.295242" elapsed="0.002332"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.011332" elapsed="0.000168"/>
+<status status="PASS" start="2026-05-23T19:48:10.297697" elapsed="0.000158"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.011242" elapsed="0.000278"/>
+<status status="PASS" start="2026-05-23T19:48:10.297628" elapsed="0.000245"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.011642" level="INFO">Length is 0.</msg>
+<msg time="2026-05-23T19:48:10.297982" level="INFO">Length is 0.</msg>
 <arg>${body}[ues]</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.011551" elapsed="0.000103"/>
+<status status="PASS" start="2026-05-23T19:48:10.297901" elapsed="0.000093"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.008819" elapsed="0.002850"/>
+<status status="PASS" start="2026-05-23T19:48:10.295140" elapsed="0.002870"/>
 </kw>
 <kw name="When I reset the simulator via API">
 <kw name="Reset Simulator" owner="EpcApiLibrary">
-<status status="PASS" start="2026-05-23T19:44:20.011807" elapsed="0.001623"/>
+<status status="PASS" start="2026-05-23T19:48:10.298148" elapsed="0.001690"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.011741" elapsed="0.001720"/>
+<status status="PASS" start="2026-05-23T19:48:10.298082" elapsed="0.001777"/>
 </kw>
 <kw name="And simulator has no attached UEs">
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.015051" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.015073" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.301519" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.301535" level="INFO">${body} = {'ues': []}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:20.013696" elapsed="0.001384"/>
+<status status="PASS" start="2026-05-23T19:48:10.300092" elapsed="0.001449"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.015237" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.301668" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.015131" elapsed="0.000119"/>
+<status status="PASS" start="2026-05-23T19:48:10.301579" elapsed="0.000101"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.015367" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.301788" level="INFO">${body} = {'ues': []}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.015285" elapsed="0.000094"/>
+<status status="PASS" start="2026-05-23T19:48:10.301712" elapsed="0.000088"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.013634" elapsed="0.001762"/>
+<status status="PASS" start="2026-05-23T19:48:10.300029" elapsed="0.001788"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.015531" elapsed="0.000152"/>
+<status status="PASS" start="2026-05-23T19:48:10.301934" elapsed="0.000134"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.015454" elapsed="0.000248"/>
+<status status="PASS" start="2026-05-23T19:48:10.301868" elapsed="0.000219"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.015805" level="INFO">Length is 0.</msg>
+<msg time="2026-05-23T19:48:10.302193" level="INFO">Length is 0.</msg>
 <arg>${body}[ues]</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.015731" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:48:10.302114" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.013538" elapsed="0.002295"/>
+<status status="PASS" start="2026-05-23T19:48:10.299936" elapsed="0.002284"/>
 </kw>
 <kw name="When I attach UE with ID 41" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.020091" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.020115" level="INFO">${body} = {'status': 'attached', 'ue_id': 41}</msg>
+<msg time="2026-05-23T19:48:10.305371" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.305394" level="INFO">${body} = {'status': 'attached', 'ue_id': 41}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.016039" elapsed="0.004085"/>
+<status status="PASS" start="2026-05-23T19:48:10.302361" elapsed="0.003043"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.020321" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.305611" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.020210" elapsed="0.000124"/>
+<status status="PASS" start="2026-05-23T19:48:10.305488" elapsed="0.000136"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.020445" level="INFO">${body} = {'status': 'attached', 'ue_id': 41}</msg>
+<msg time="2026-05-23T19:48:10.305742" level="INFO">${body} = {'status': 'attached', 'ue_id': 41}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.020368" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:48:10.305663" elapsed="0.000091"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.015920" elapsed="0.004556"/>
+<status status="PASS" start="2026-05-23T19:48:10.302289" elapsed="0.003485"/>
 </kw>
 <kw name="When I attach UE with ID 42" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.023536" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.023558" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
+<msg time="2026-05-23T19:48:10.308688" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.308716" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.020645" elapsed="0.002922"/>
+<status status="PASS" start="2026-05-23T19:48:10.305949" elapsed="0.002776"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.023833" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.308905" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.023626" elapsed="0.000248"/>
+<status status="PASS" start="2026-05-23T19:48:10.308785" elapsed="0.000135"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.024068" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
+<msg time="2026-05-23T19:48:10.309044" level="INFO">${body} = {'status': 'attached', 'ue_id': 42}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.023944" elapsed="0.000139"/>
+<status status="PASS" start="2026-05-23T19:48:10.308960" elapsed="0.000100"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.020561" elapsed="0.003543"/>
+<status status="PASS" start="2026-05-23T19:48:10.305862" elapsed="0.003216"/>
 </kw>
 <kw name="When I attach UE with ID 43" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.027528" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.027548" level="INFO">${body} = {'status': 'attached', 'ue_id': 43}</msg>
+<msg time="2026-05-23T19:48:10.311990" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.312007" level="INFO">${body} = {'status': 'attached', 'ue_id': 43}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.024296" elapsed="0.003259"/>
+<status status="PASS" start="2026-05-23T19:48:10.309269" elapsed="0.002746"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.027718" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.312150" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.027608" elapsed="0.000124"/>
+<status status="PASS" start="2026-05-23T19:48:10.312059" elapsed="0.000103"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.027849" level="INFO">${body} = {'status': 'attached', 'ue_id': 43}</msg>
+<msg time="2026-05-23T19:48:10.312270" level="INFO">${body} = {'status': 'attached', 'ue_id': 43}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.027769" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:48:10.312195" elapsed="0.000088"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.024204" elapsed="0.003677"/>
+<status status="PASS" start="2026-05-23T19:48:10.309179" elapsed="0.003121"/>
 </kw>
 <kw name="When I reset the simulator via API">
 <kw name="Reset Simulator" owner="EpcApiLibrary">
-<status status="PASS" start="2026-05-23T19:44:20.028050" elapsed="0.009746"/>
+<status status="PASS" start="2026-05-23T19:48:10.312434" elapsed="0.004838"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.027967" elapsed="0.009882"/>
+<status status="PASS" start="2026-05-23T19:48:10.312366" elapsed="0.004924"/>
 </kw>
 <kw name="And simulator has no attached UEs">
 <kw name="When I list UEs">
 <kw name="List Ues" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.040561" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.040595" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.319155" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.319181" level="INFO">${body} = {'ues': []}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
-<status status="PASS" start="2026-05-23T19:44:20.038200" elapsed="0.002404"/>
+<status status="PASS" start="2026-05-23T19:48:10.317513" elapsed="0.001676"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.041130" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.319383" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.040704" elapsed="0.000488"/>
+<status status="PASS" start="2026-05-23T19:48:10.319256" elapsed="0.000141"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.041412" level="INFO">${body} = {'ues': []}</msg>
+<msg time="2026-05-23T19:48:10.319514" level="INFO">${body} = {'ues': []}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.041257" elapsed="0.000176"/>
+<status status="PASS" start="2026-05-23T19:48:10.319434" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.038125" elapsed="0.003334"/>
+<status status="PASS" start="2026-05-23T19:48:10.317449" elapsed="0.002096"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.041627" elapsed="0.000195"/>
+<status status="PASS" start="2026-05-23T19:48:10.319687" elapsed="0.000173"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.041535" elapsed="0.000310"/>
+<status status="PASS" start="2026-05-23T19:48:10.319607" elapsed="0.000273"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.041963" level="INFO">Length is 0.</msg>
+<msg time="2026-05-23T19:48:10.319999" level="INFO">Length is 0.</msg>
 <arg>${body}[ues]</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.041877" elapsed="0.000099"/>
+<status status="PASS" start="2026-05-23T19:48:10.319909" elapsed="0.000104"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.037986" elapsed="0.004006"/>
+<status status="PASS" start="2026-05-23T19:48:10.317358" elapsed="0.002721"/>
 </kw>
 <doc>9.1: reset na pustym symulatorze i po wielu attach - brak podłączonych UE.</doc>
 <tag>EPC-SM-9-001</tag>
 <tag>req_9</tag>
 <tag>reset</tag>
-<status status="PASS" start="2026-05-23T19:44:20.004835" elapsed="0.037247"/>
+<status status="PASS" start="2026-05-23T19:48:10.290707" elapsed="0.029500"/>
 </test>
 <test id="s1-t9" name="EPC-SM-9-002 Reset - brak poprzedniej sesji i ponowny attach z bearerem 9" line="139">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T19:44:20.042350" elapsed="0.003552"/>
+<status status="PASS" start="2026-05-23T19:48:10.320487" elapsed="0.002595"/>
 </kw>
 <kw name="When I attach UE with ID 77" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.051293" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.051321" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
+<msg time="2026-05-23T19:48:10.326783" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.326807" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.046285" elapsed="0.005044"/>
+<status status="PASS" start="2026-05-23T19:48:10.323341" elapsed="0.003475"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.051540" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.327003" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.051406" elapsed="0.000149"/>
+<status status="PASS" start="2026-05-23T19:48:10.326878" elapsed="0.000138"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.051671" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
+<msg time="2026-05-23T19:48:10.327152" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.051592" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:48:10.327055" elapsed="0.000113"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.046162" elapsed="0.005543"/>
+<status status="PASS" start="2026-05-23T19:48:10.323227" elapsed="0.003963"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.051892" elapsed="0.000183"/>
+<status status="PASS" start="2026-05-23T19:48:10.327350" elapsed="0.000169"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.051806" elapsed="0.000289"/>
+<status status="PASS" start="2026-05-23T19:48:10.327271" elapsed="0.000267"/>
 </kw>
 <kw name="When I reset the simulator via API">
 <kw name="Reset Simulator" owner="EpcApiLibrary">
-<status status="PASS" start="2026-05-23T19:44:20.052233" elapsed="0.004087"/>
+<status status="PASS" start="2026-05-23T19:48:10.327754" elapsed="0.006764"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.052164" elapsed="0.004199"/>
+<status status="PASS" start="2026-05-23T19:48:10.327603" elapsed="0.006959"/>
 </kw>
 <kw name="When I query attached UE state for ID 77" source_name="When I query attached UE state for ID ${ue_id}">
 <kw name="When I get UE with ID ${ue_id}" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.059653" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T19:44:20.059678" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.337632" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.337661" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.057201" elapsed="0.002519"/>
+<status status="PASS" start="2026-05-23T19:48:10.334962" elapsed="0.002743"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.059923" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:48:10.337932" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.059791" elapsed="0.000146"/>
+<status status="PASS" start="2026-05-23T19:48:10.337780" elapsed="0.000171"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.060058" level="INFO">${body} = {'detail': 'UE not found'}</msg>
+<msg time="2026-05-23T19:48:10.338092" level="INFO">${body} = {'detail': 'UE not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.059975" elapsed="0.000096"/>
+<status status="PASS" start="2026-05-23T19:48:10.337992" elapsed="0.000117"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.057071" elapsed="0.003021"/>
+<status status="PASS" start="2026-05-23T19:48:10.334870" elapsed="0.003261"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.056611" elapsed="0.003494"/>
+<status status="PASS" start="2026-05-23T19:48:10.334694" elapsed="0.003451"/>
 </kw>
 <kw name="Then response is error">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 400</arg>
 <arg>msg=Oczekiwano błędu wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.060270" elapsed="0.000161"/>
+<status status="PASS" start="2026-05-23T19:48:10.338319" elapsed="0.000186"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.060187" elapsed="0.000262"/>
+<status status="PASS" start="2026-05-23T19:48:10.338235" elapsed="0.000292"/>
 </kw>
 <kw name="When I attach UE with ID 77" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.066103" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.066133" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
+<msg time="2026-05-23T19:48:10.343006" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.343032" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.060617" elapsed="0.005525"/>
+<status status="PASS" start="2026-05-23T19:48:10.338694" elapsed="0.004346"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.066396" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.343226" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.066237" elapsed="0.000173"/>
+<status status="PASS" start="2026-05-23T19:48:10.343102" elapsed="0.000138"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.066526" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
+<msg time="2026-05-23T19:48:10.343359" level="INFO">${body} = {'status': 'attached', 'ue_id': 77}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.066447" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:48:10.343278" elapsed="0.000094"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.060532" elapsed="0.006030"/>
+<status status="PASS" start="2026-05-23T19:48:10.338606" elapsed="0.004789"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.066741" elapsed="0.000175"/>
+<status status="PASS" start="2026-05-23T19:48:10.343569" elapsed="0.000169"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.066656" elapsed="0.000280"/>
+<status status="PASS" start="2026-05-23T19:48:10.343483" elapsed="0.000276"/>
 </kw>
 <kw name="When I get UE with ID 77" source_name="When I get UE with ID ${ue_id}">
 <kw name="Get Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T19:44:20.069482" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T19:44:20.069507" level="INFO">${body} = {'ue_id': 77, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.346005" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.346031" level="INFO">${body} = {'ue_id': 77, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T19:44:20.067094" elapsed="0.002421"/>
+<status status="PASS" start="2026-05-23T19:48:10.343914" elapsed="0.002127"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.069685" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:48:10.346221" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.069576" elapsed="0.000120"/>
+<status status="PASS" start="2026-05-23T19:48:10.346098" elapsed="0.000137"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T19:44:20.069793" level="INFO">${body} = {'ue_id': 77, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-05-23T19:48:10.346357" level="INFO">${body} = {'ue_id': 77, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.069726" elapsed="0.000078"/>
+<status status="PASS" start="2026-05-23T19:48:10.346273" elapsed="0.000097"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.067012" elapsed="0.002809"/>
+<status status="PASS" start="2026-05-23T19:48:10.343835" elapsed="0.002555"/>
 </kw>
 <kw name="Then response is success">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${status_code} &gt;= 200 and ${status_code} &lt; 300</arg>
 <arg>msg=Oczekiwano 2xx wg dokumentacji, otrzymano HTTP ${status_code}: ${body}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.070001" elapsed="0.000167"/>
+<status status="PASS" start="2026-05-23T19:48:10.346560" elapsed="0.000162"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.069911" elapsed="0.000277"/>
+<status status="PASS" start="2026-05-23T19:48:10.346483" elapsed="0.000259"/>
 </kw>
 <kw name="And UE has default bearer per documentation">
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${body}[bearers]</arg>
 <arg>${DOC_DEFAULT_BEARER}</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-05-23T19:44:20.070319" elapsed="0.000062"/>
+<status status="PASS" start="2026-05-23T19:48:10.346881" elapsed="0.000060"/>
 </kw>
-<status status="PASS" start="2026-05-23T19:44:20.070252" elapsed="0.000146"/>
+<status status="PASS" start="2026-05-23T19:48:10.346811" elapsed="0.000147"/>
 </kw>
 <doc>9.1 + 1.4: po resecie stary UE niedostępny; możliwy attach z domyślnym bearerem.</doc>
 <tag>EPC-SM-9-002</tag>
 <tag>reattach</tag>
 <tag>req_9</tag>
 <tag>reset</tag>
-<status status="PASS" start="2026-05-23T19:44:20.042212" elapsed="0.028222"/>
+<status status="PASS" start="2026-05-23T19:48:10.320356" elapsed="0.026638"/>
 </test>
 <doc>Testy: zarządzanie sesją UE (dok. pkt 1, 2, 9).
 Symulator: docker run -p 8000:8000 epc-simulator:1.0.0
 Uruchomienie: robot epc_session_management.robot</doc>
-<status status="FAIL" start="2026-05-23T19:44:19.769301" elapsed="0.301351"/>
+<status status="FAIL" start="2026-05-23T19:48:10.058238" elapsed="0.288954"/>
 </suite>
 <statistics>
 <total>
