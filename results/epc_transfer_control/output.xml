@@ -1,366 +1,366 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.13.12 on darwin)" generated="2026-05-23T12:58:21.600431" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.13.12 on darwin)" generated="2026-05-23T19:44:20.181963" rpa="false" schemaversion="5">
 <suite id="s1" name="Epc Transfer Control" source="/Users/jakubkapala/Code/studia/sem6/to-nokia/to-nokia/epc_transfer_control.robot">
 <test id="s1-t1" name="EPC-TC-001 Start transferu DL na domyslnym bearerze" line="13">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.631408" elapsed="0.008728"/>
+<status status="PASS" start="2026-05-23T19:44:20.212048" elapsed="0.013173"/>
 </kw>
 <kw name="When I attach UE with ID 51" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.643821" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.643851" level="INFO">${body} = {'status': 'attached', 'ue_id': 51}</msg>
+<msg time="2026-05-23T19:44:20.231083" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.231113" level="INFO">${body} = {'status': 'attached', 'ue_id': 51}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.640450" elapsed="0.003412"/>
+<status status="PASS" start="2026-05-23T19:44:20.225536" elapsed="0.005588"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.644071" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.231330" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.643933" elapsed="0.000152"/>
+<status status="PASS" start="2026-05-23T19:44:20.231189" elapsed="0.000156"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.644198" level="INFO">${body} = {'status': 'attached', 'ue_id': 51}</msg>
+<msg time="2026-05-23T19:44:20.231463" level="INFO">${body} = {'status': 'attached', 'ue_id': 51}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.644122" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:44:20.231383" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.640335" elapsed="0.003904"/>
+<status status="PASS" start="2026-05-23T19:44:20.225420" elapsed="0.006076"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.644518" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.231747" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.644433" elapsed="0.000106"/>
+<status status="PASS" start="2026-05-23T19:44:20.231669" elapsed="0.000098"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.644337" elapsed="0.000222"/>
+<status status="PASS" start="2026-05-23T19:44:20.231583" elapsed="0.000202"/>
 </kw>
 <kw name="When I start DL traffic for UE 51 on bearer 9 with protocol tcp at 25 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.652480" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.652527" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 51, 'bearer_id': 9, 'target_bps': 25000000}</msg>
+<msg time="2026-05-23T19:44:20.236676" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.236697" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 51, 'bearer_id': 9, 'target_bps': 25000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.644788" elapsed="0.007760"/>
+<status status="PASS" start="2026-05-23T19:44:20.231948" elapsed="0.004757"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.652803" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.236852" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.652639" elapsed="0.000181"/>
+<status status="PASS" start="2026-05-23T19:44:20.236754" elapsed="0.000111"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.653021" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 51, 'bearer_id': 9, 'target_bps': 25000000}</msg>
+<msg time="2026-05-23T19:44:20.236974" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 51, 'bearer_id': 9, 'target_bps': 25000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.652914" elapsed="0.000139"/>
+<status status="PASS" start="2026-05-23T19:44:20.236900" elapsed="0.000085"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.644646" elapsed="0.008442"/>
+<status status="PASS" start="2026-05-23T19:44:20.231863" elapsed="0.005138"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.653453" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.237223" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.653347" elapsed="0.000131"/>
+<status status="PASS" start="2026-05-23T19:44:20.237152" elapsed="0.000088"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.653227" elapsed="0.000328"/>
+<status status="PASS" start="2026-05-23T19:44:20.237076" elapsed="0.000180"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.653916" elapsed="0.000161"/>
+<status status="PASS" start="2026-05-23T19:44:20.237393" elapsed="0.000087"/>
 </kw>
 <arg>status</arg>
 <arg>traffic_started</arg>
-<status status="PASS" start="2026-05-23T12:58:21.653746" elapsed="0.000355"/>
+<status status="PASS" start="2026-05-23T19:44:20.237316" elapsed="0.000182"/>
 </kw>
 <kw name="And field has integer value">
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.654671" level="INFO">${expected_int} = 25000000</msg>
+<msg time="2026-05-23T19:44:20.237700" level="INFO">${expected_int} = 25000000</msg>
 <var>${expected_int}</var>
 <arg>${expected_value}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.654501" elapsed="0.000180"/>
+<status status="PASS" start="2026-05-23T19:44:20.237628" elapsed="0.000079"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_int}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.654718" elapsed="0.000094"/>
+<status status="PASS" start="2026-05-23T19:44:20.237735" elapsed="0.000076"/>
 </kw>
 <arg>target_bps</arg>
 <arg>25000000</arg>
-<status status="PASS" start="2026-05-23T12:58:21.654395" elapsed="0.000436"/>
+<status status="PASS" start="2026-05-23T19:44:20.237557" elapsed="0.000268"/>
 </kw>
 <kw name="When I get traffic stats for UE 51 and bearer 9" source_name="When I get traffic stats for UE ${ue_id} and bearer ${bearer_id}">
 <kw name="Get Bearer Traffic Stats" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.660463" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.660544" level="INFO">${body} = {'ue_id': 51, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 25000000, 'tx_bps': 2441842485, 'rx_bps': 2441842485, 'duration': 0.010238170623779297}</msg>
+<msg time="2026-05-23T19:44:20.239953" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.239982" level="INFO">${body} = {'ue_id': 51, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 25000000, 'tx_bps': 5217315155, 'rx_bps': 5217315155, 'duration': 0.004791736602783203}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.655058" elapsed="0.005507"/>
+<status status="PASS" start="2026-05-23T19:44:20.237964" elapsed="0.002028"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.661102" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.240195" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.660784" elapsed="0.000359"/>
+<status status="PASS" start="2026-05-23T19:44:20.240067" elapsed="0.000141"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.661583" level="INFO">${body} = {'ue_id': 51, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 25000000, 'tx_bps': 2441842485, 'rx_bps': 2441842485, 'duration': 0.010238170623779297}</msg>
+<msg time="2026-05-23T19:44:20.240319" level="INFO">${body} = {'ue_id': 51, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 25000000, 'tx_bps': 5217315155, 'rx_bps': 5217315155, 'duration': 0.004791736602783203}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.661250" elapsed="0.000489"/>
+<status status="PASS" start="2026-05-23T19:44:20.240244" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.654949" elapsed="0.006880"/>
+<status status="PASS" start="2026-05-23T19:44:20.237889" elapsed="0.002459"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.663028" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.240608" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.662625" elapsed="0.000472"/>
+<status status="PASS" start="2026-05-23T19:44:20.240525" elapsed="0.000101"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.662125" elapsed="0.001021"/>
+<status status="PASS" start="2026-05-23T19:44:20.240435" elapsed="0.000207"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.663700" elapsed="0.000404"/>
+<status status="PASS" start="2026-05-23T19:44:20.240805" elapsed="0.000098"/>
 </kw>
 <arg>protocol</arg>
 <arg>tcp</arg>
-<status status="PASS" start="2026-05-23T12:58:21.663403" elapsed="0.000760"/>
+<status status="PASS" start="2026-05-23T19:44:20.240719" elapsed="0.000201"/>
 </kw>
 <kw name="And field has integer value">
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.665085" level="INFO">${expected_int} = 25000000</msg>
+<msg time="2026-05-23T19:44:20.241220" level="INFO">${expected_int} = 25000000</msg>
 <var>${expected_int}</var>
 <arg>${expected_value}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.664790" elapsed="0.000450"/>
+<status status="PASS" start="2026-05-23T19:44:20.241131" elapsed="0.000097"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_int}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.665438" elapsed="0.000272"/>
+<status status="PASS" start="2026-05-23T19:44:20.241295" elapsed="0.000078"/>
 </kw>
 <arg>target_bps</arg>
 <arg>25000000</arg>
-<status status="PASS" start="2026-05-23T12:58:21.664534" elapsed="0.001299"/>
+<status status="PASS" start="2026-05-23T19:44:20.241039" elapsed="0.000350"/>
 </kw>
 <doc>Wymaganie 3: transfer DL mozna uruchomic dla aktywnego bearera domyslnego 9.</doc>
 <tag>happy_path</tag>
 <tag>requirement_3</tag>
 <tag>start</tag>
 <tag>transfer</tag>
-<status status="PASS" start="2026-05-23T12:58:21.631087" elapsed="0.034882"/>
+<status status="PASS" start="2026-05-23T19:44:20.211741" elapsed="0.029690"/>
 </test>
 <test id="s1-t2" name="EPC-TC-002 Start transferu DL na dedykowanym bearerze" line="27">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.668651" elapsed="0.007513"/>
+<status status="PASS" start="2026-05-23T19:44:20.241659" elapsed="0.005564"/>
 </kw>
 <kw name="When I attach UE with ID 52" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.681286" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.681316" level="INFO">${body} = {'status': 'attached', 'ue_id': 52}</msg>
+<msg time="2026-05-23T19:44:20.251807" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.251833" level="INFO">${body} = {'status': 'attached', 'ue_id': 52}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.676633" elapsed="0.004693"/>
+<status status="PASS" start="2026-05-23T19:44:20.247488" elapsed="0.004355"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.681587" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.252047" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.681403" elapsed="0.000199"/>
+<status status="PASS" start="2026-05-23T19:44:20.251907" elapsed="0.000155"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.681725" level="INFO">${body} = {'status': 'attached', 'ue_id': 52}</msg>
+<msg time="2026-05-23T19:44:20.252182" level="INFO">${body} = {'status': 'attached', 'ue_id': 52}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.681642" elapsed="0.000096"/>
+<status status="PASS" start="2026-05-23T19:44:20.252102" elapsed="0.000093"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.676509" elapsed="0.005251"/>
+<status status="PASS" start="2026-05-23T19:44:20.247378" elapsed="0.004834"/>
 </kw>
 <kw name="When I add bearer with ID 4 for UE 52" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
 <kw name="Add Bearer" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.686816" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.686897" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 52, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.256201" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.256223" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 52, 'bearer_id': 4}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.681965" elapsed="0.004944"/>
+<status status="PASS" start="2026-05-23T19:44:20.252408" elapsed="0.003823"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.687303" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.256386" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.687118" elapsed="0.000204"/>
+<status status="PASS" start="2026-05-23T19:44:20.256289" elapsed="0.000109"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.687451" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 52, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.256500" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 52, 'bearer_id': 4}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.687367" elapsed="0.000097"/>
+<status status="PASS" start="2026-05-23T19:44:20.256430" elapsed="0.000081"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.681868" elapsed="0.005651"/>
+<status status="PASS" start="2026-05-23T19:44:20.252312" elapsed="0.004215"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.687855" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.256789" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.687767" elapsed="0.000110"/>
+<status status="PASS" start="2026-05-23T19:44:20.256704" elapsed="0.000104"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.687664" elapsed="0.000232"/>
+<status status="PASS" start="2026-05-23T19:44:20.256615" elapsed="0.000210"/>
 </kw>
 <kw name="When I start DL traffic for UE 52 on bearer 4 with protocol udp at 10 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.693821" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.693845" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 52, 'bearer_id': 4, 'target_bps': 10000000}</msg>
+<msg time="2026-05-23T19:44:20.263014" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.263045" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 52, 'bearer_id': 4, 'target_bps': 10000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.688091" elapsed="0.005762"/>
+<status status="PASS" start="2026-05-23T19:44:20.257000" elapsed="0.006054"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.694042" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.263277" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.693920" elapsed="0.000135"/>
+<status status="PASS" start="2026-05-23T19:44:20.263132" elapsed="0.000159"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.694169" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 52, 'bearer_id': 4, 'target_bps': 10000000}</msg>
+<msg time="2026-05-23T19:44:20.263415" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 52, 'bearer_id': 4, 'target_bps': 10000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.694089" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:44:20.263334" elapsed="0.000094"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.687992" elapsed="0.006208"/>
+<status status="PASS" start="2026-05-23T19:44:20.256908" elapsed="0.006540"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.694450" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.263797" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.694372" elapsed="0.000096"/>
+<status status="PASS" start="2026-05-23T19:44:20.263691" elapsed="0.000130"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.694282" elapsed="0.000204"/>
+<status status="PASS" start="2026-05-23T19:44:20.263574" elapsed="0.000269"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.694630" elapsed="0.000100"/>
+<status status="PASS" start="2026-05-23T19:44:20.264008" elapsed="0.000102"/>
 </kw>
 <arg>status</arg>
 <arg>traffic_started</arg>
-<status status="PASS" start="2026-05-23T12:58:21.694549" elapsed="0.000200"/>
+<status status="PASS" start="2026-05-23T19:44:20.263918" elapsed="0.000211"/>
 </kw>
 <kw name="And field has integer value">
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.695067" level="INFO">${expected_int} = 10000000</msg>
+<msg time="2026-05-23T19:44:20.264377" level="INFO">${expected_int} = 10000000</msg>
 <var>${expected_int}</var>
 <arg>${expected_value}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.694949" elapsed="0.000129"/>
+<status status="PASS" start="2026-05-23T19:44:20.264289" elapsed="0.000096"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_int}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.695120" elapsed="0.000096"/>
+<status status="PASS" start="2026-05-23T19:44:20.264423" elapsed="0.000089"/>
 </kw>
 <arg>target_bps</arg>
 <arg>10000000</arg>
-<status status="PASS" start="2026-05-23T12:58:21.694813" elapsed="0.000422"/>
+<status status="PASS" start="2026-05-23T19:44:20.264198" elapsed="0.000331"/>
 </kw>
 <kw name="When I get traffic stats for UE 52 and bearer 4" source_name="When I get traffic stats for UE ${ue_id} and bearer ${bearer_id}">
 <kw name="Get Bearer Traffic Stats" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.697633" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.697659" level="INFO">${body} = {'ue_id': 52, 'bearer_id': 4, 'protocol': 'udp', 'target_bps': 10000000, 'tx_bps': 1889666606, 'rx_bps': 1889666606, 'duration': 0.005291938781738281}</msg>
+<msg time="2026-05-23T19:44:20.266976" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.266999" level="INFO">${body} = {'ue_id': 52, 'bearer_id': 4, 'protocol': 'udp', 'target_bps': 10000000, 'tx_bps': 1603143370, 'rx_bps': 1603143370, 'duration': 0.00623774528503418}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.695419" elapsed="0.002249"/>
+<status status="PASS" start="2026-05-23T19:44:20.264687" elapsed="0.002321"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.697848" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.267167" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.697729" elapsed="0.000131"/>
+<status status="PASS" start="2026-05-23T19:44:20.267063" elapsed="0.000118"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.698010" level="INFO">${body} = {'ue_id': 52, 'bearer_id': 4, 'protocol': 'udp', 'target_bps': 10000000, 'tx_bps': 1889666606, 'rx_bps': 1889666606, 'duration': 0.005291938781738281}</msg>
+<msg time="2026-05-23T19:44:20.267330" level="INFO">${body} = {'ue_id': 52, 'bearer_id': 4, 'protocol': 'udp', 'target_bps': 10000000, 'tx_bps': 1603143370, 'rx_bps': 1603143370, 'duration': 0.00623774528503418}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.697936" elapsed="0.000086"/>
+<status status="PASS" start="2026-05-23T19:44:20.267258" elapsed="0.000083"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.695328" elapsed="0.002712"/>
+<status status="PASS" start="2026-05-23T19:44:20.264606" elapsed="0.002752"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.698272" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.267619" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.698199" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:44:20.267539" elapsed="0.000098"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.698121" elapsed="0.000183"/>
+<status status="PASS" start="2026-05-23T19:44:20.267448" elapsed="0.000207"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.698454" elapsed="0.000095"/>
+<status status="PASS" start="2026-05-23T19:44:20.267807" elapsed="0.000090"/>
 </kw>
 <arg>protocol</arg>
 <arg>udp</arg>
-<status status="PASS" start="2026-05-23T12:58:21.698373" elapsed="0.000192"/>
+<status status="PASS" start="2026-05-23T19:44:20.267719" elapsed="0.000196"/>
 </kw>
 <doc>Wymaganie 3: transfer DL mozna uruchomic dla aktywnego bearera dedykowanego.</doc>
 <tag>bearer</tag>
@@ -368,84 +368,84 @@
 <tag>requirement_3</tag>
 <tag>start</tag>
 <tag>transfer</tag>
-<status status="PASS" start="2026-05-23T12:58:21.666282" elapsed="0.032321"/>
+<status status="PASS" start="2026-05-23T19:44:20.241531" elapsed="0.026433"/>
 </test>
 <test id="s1-t3" name="EPC-TC-003 Start transferu dla nieaktywnego bearera zwraca blad" line="41">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.698849" elapsed="0.003983"/>
+<status status="PASS" start="2026-05-23T19:44:20.268231" elapsed="0.004272"/>
 </kw>
 <kw name="When I attach UE with ID 53" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.706000" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.706015" level="INFO">${body} = {'status': 'attached', 'ue_id': 53}</msg>
+<msg time="2026-05-23T19:44:20.275630" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.275655" level="INFO">${body} = {'status': 'attached', 'ue_id': 53}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.703086" elapsed="0.002936"/>
+<status status="PASS" start="2026-05-23T19:44:20.272714" elapsed="0.002949"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.706142" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.275842" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.706064" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:44:20.275725" elapsed="0.000130"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.706246" level="INFO">${body} = {'status': 'attached', 'ue_id': 53}</msg>
+<msg time="2026-05-23T19:44:20.275976" level="INFO">${body} = {'status': 'attached', 'ue_id': 53}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.706181" elapsed="0.000075"/>
+<status status="PASS" start="2026-05-23T19:44:20.275893" elapsed="0.000095"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.702975" elapsed="0.003296"/>
+<status status="PASS" start="2026-05-23T19:44:20.272625" elapsed="0.003383"/>
 </kw>
 <kw name="When I start DL traffic for UE 53 on bearer 4 with protocol tcp at 1 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.708544" level="INFO">${status_code} = 400</msg>
-<msg time="2026-05-23T12:58:21.708571" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<msg time="2026-05-23T19:44:20.278138" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:44:20.278160" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.706424" elapsed="0.002157"/>
+<status status="PASS" start="2026-05-23T19:44:20.276206" elapsed="0.001962"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.708783" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T19:44:20.278348" level="INFO">${status_code} = 400</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.708652" elapsed="0.000145"/>
+<status status="PASS" start="2026-05-23T19:44:20.278225" elapsed="0.000137"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.708918" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<msg time="2026-05-23T19:44:20.278476" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.708841" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:44:20.278399" elapsed="0.000089"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.706345" elapsed="0.002601"/>
+<status status="PASS" start="2026-05-23T19:44:20.276106" elapsed="0.002401"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.709214" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.278757" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.709132" elapsed="0.000100"/>
+<status status="PASS" start="2026-05-23T19:44:20.278677" elapsed="0.000099"/>
 </kw>
 <arg>400</arg>
-<status status="PASS" start="2026-05-23T12:58:21.709040" elapsed="0.000210"/>
+<status status="PASS" start="2026-05-23T19:44:20.278592" elapsed="0.000200"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.709401" elapsed="0.000095"/>
+<status status="PASS" start="2026-05-23T19:44:20.278935" elapsed="0.000088"/>
 </kw>
 <arg>detail</arg>
 <arg>Bearer not found</arg>
-<status status="PASS" start="2026-05-23T12:58:21.709318" elapsed="0.000196"/>
+<status status="PASS" start="2026-05-23T19:44:20.278856" elapsed="0.000184"/>
 </kw>
 <doc>Wymaganie 3: start transferu dla bearera, ktory nie jest aktywny, powinien zwrocic blad.</doc>
 <tag>inactive_bearer</tag>
@@ -453,224 +453,224 @@
 <tag>requirement_3</tag>
 <tag>start</tag>
 <tag>transfer</tag>
-<status status="PASS" start="2026-05-23T12:58:21.698717" elapsed="0.010841"/>
+<status status="PASS" start="2026-05-23T19:44:20.268081" elapsed="0.010996"/>
 </test>
 <test id="s1-t4" name="EPC-TC-004 Zakonczenie transferu dla jednego bearera" line="49">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.709811" elapsed="0.003747"/>
+<status status="PASS" start="2026-05-23T19:44:20.279306" elapsed="0.004277"/>
 </kw>
 <kw name="When I attach UE with ID 54" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.716846" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.716868" level="INFO">${body} = {'status': 'attached', 'ue_id': 54}</msg>
+<msg time="2026-05-23T19:44:20.286774" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.286798" level="INFO">${body} = {'status': 'attached', 'ue_id': 54}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.713801" elapsed="0.003075"/>
+<status status="PASS" start="2026-05-23T19:44:20.283870" elapsed="0.002937"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.717039" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.286995" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.716931" elapsed="0.000120"/>
+<status status="PASS" start="2026-05-23T19:44:20.286868" elapsed="0.000141"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.717148" level="INFO">${body} = {'status': 'attached', 'ue_id': 54}</msg>
+<msg time="2026-05-23T19:44:20.287126" level="INFO">${body} = {'status': 'attached', 'ue_id': 54}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.717081" elapsed="0.000077"/>
+<status status="PASS" start="2026-05-23T19:44:20.287046" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.713693" elapsed="0.003481"/>
+<status status="PASS" start="2026-05-23T19:44:20.283751" elapsed="0.003406"/>
 </kw>
 <kw name="When I add bearer with ID 4 for UE 54" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
 <kw name="Add Bearer" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.720861" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.720887" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 54, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.290299" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.290322" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 54, 'bearer_id': 4}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.717365" elapsed="0.003532"/>
+<status status="PASS" start="2026-05-23T19:44:20.287348" elapsed="0.002982"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.721067" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.290496" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.720960" elapsed="0.000120"/>
+<status status="PASS" start="2026-05-23T19:44:20.290387" elapsed="0.000122"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.721183" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 54, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.290622" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 54, 'bearer_id': 4}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.721114" elapsed="0.000118"/>
+<status status="PASS" start="2026-05-23T19:44:20.290546" elapsed="0.000123"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.717272" elapsed="0.003980"/>
+<status status="PASS" start="2026-05-23T19:44:20.287255" elapsed="0.003435"/>
 </kw>
 <kw name="When I start DL traffic for UE 54 on bearer 9 with protocol tcp at 2 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.726841" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.726863" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 9, 'target_bps': 2000000}</msg>
+<msg time="2026-05-23T19:44:20.296521" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.296539" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 9, 'target_bps': 2000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.721456" elapsed="0.005415"/>
+<status status="PASS" start="2026-05-23T19:44:20.291000" elapsed="0.005546"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.727029" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.296687" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.726927" elapsed="0.000118"/>
+<status status="PASS" start="2026-05-23T19:44:20.296591" elapsed="0.000108"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.727156" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 9, 'target_bps': 2000000}</msg>
+<msg time="2026-05-23T19:44:20.296803" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 9, 'target_bps': 2000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.727079" elapsed="0.000090"/>
+<status status="PASS" start="2026-05-23T19:44:20.296731" elapsed="0.000084"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.721351" elapsed="0.005837"/>
+<status status="PASS" start="2026-05-23T19:44:20.290849" elapsed="0.005983"/>
 </kw>
 <kw name="When I start DL traffic for UE 54 on bearer 4 with protocol udp at 3 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.732460" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.732480" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 4, 'target_bps': 3000000}</msg>
+<msg time="2026-05-23T19:44:20.301983" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.302000" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 4, 'target_bps': 3000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.727376" elapsed="0.005116"/>
+<status status="PASS" start="2026-05-23T19:44:20.297004" elapsed="0.005003"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.732714" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.302138" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.732581" elapsed="0.000150"/>
+<status status="PASS" start="2026-05-23T19:44:20.302050" elapsed="0.000100"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.732850" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 4, 'target_bps': 3000000}</msg>
+<msg time="2026-05-23T19:44:20.302259" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 54, 'bearer_id': 4, 'target_bps': 3000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.732771" elapsed="0.000091"/>
+<status status="PASS" start="2026-05-23T19:44:20.302183" elapsed="0.000088"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.727279" elapsed="0.005603"/>
+<status status="PASS" start="2026-05-23T19:44:20.296916" elapsed="0.005371"/>
 </kw>
 <kw name="When I stop traffic for UE 54 and bearer 4" source_name="When I stop traffic for UE ${ue_id} and bearer ${bearer_id}">
 <kw name="Stop Traffic" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.736359" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.736379" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 54, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.305644" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.305671" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 54, 'bearer_id': 4}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.733068" elapsed="0.003318"/>
+<status status="PASS" start="2026-05-23T19:44:20.302449" elapsed="0.003230"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.736569" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.305874" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.736449" elapsed="0.000131"/>
+<status status="PASS" start="2026-05-23T19:44:20.305748" elapsed="0.000140"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.736684" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 54, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.306005" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 54, 'bearer_id': 4}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.736610" elapsed="0.000085"/>
+<status status="PASS" start="2026-05-23T19:44:20.305924" elapsed="0.000094"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.732976" elapsed="0.003735"/>
+<status status="PASS" start="2026-05-23T19:44:20.302365" elapsed="0.003673"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.737032" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.306314" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.736925" elapsed="0.000131"/>
+<status status="PASS" start="2026-05-23T19:44:20.306230" elapsed="0.000103"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.736798" elapsed="0.000281"/>
+<status status="PASS" start="2026-05-23T19:44:20.306133" elapsed="0.000218"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.737243" elapsed="0.000100"/>
+<status status="PASS" start="2026-05-23T19:44:20.306507" elapsed="0.000094"/>
 </kw>
 <arg>status</arg>
 <arg>traffic_stopped</arg>
-<status status="PASS" start="2026-05-23T12:58:21.737157" elapsed="0.000204"/>
+<status status="PASS" start="2026-05-23T19:44:20.306423" elapsed="0.000195"/>
 </kw>
 <kw name="When I get traffic stats for UE 54 and bearer 9" source_name="When I get traffic stats for UE ${ue_id} and bearer ${bearer_id}">
 <kw name="Get Bearer Traffic Stats" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.739387" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.739408" level="INFO">${body} = {'ue_id': 54, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 2000000, 'tx_bps': 141730582, 'rx_bps': 141730582, 'duration': 0.01411128044128418}</msg>
+<msg time="2026-05-23T19:44:20.308890" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.308918" level="INFO">${body} = {'ue_id': 54, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 2000000, 'tx_bps': 146102271, 'rx_bps': 146102271, 'duration': 0.013689041137695312}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.737589" elapsed="0.001837"/>
+<status status="PASS" start="2026-05-23T19:44:20.306788" elapsed="0.002139"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.739569" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.309114" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.739476" elapsed="0.000105"/>
+<status status="PASS" start="2026-05-23T19:44:20.308991" elapsed="0.000139"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.739687" level="INFO">${body} = {'ue_id': 54, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 2000000, 'tx_bps': 141730582, 'rx_bps': 141730582, 'duration': 0.01411128044128418}</msg>
+<msg time="2026-05-23T19:44:20.309257" level="INFO">${body} = {'ue_id': 54, 'bearer_id': 9, 'protocol': 'tcp', 'target_bps': 2000000, 'tx_bps': 146102271, 'rx_bps': 146102271, 'duration': 0.013689041137695312}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.739612" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:44:20.309169" elapsed="0.000102"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.737482" elapsed="0.002234"/>
+<status status="PASS" start="2026-05-23T19:44:20.306703" elapsed="0.002586"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.739953" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.309556" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.739876" elapsed="0.000094"/>
+<status status="PASS" start="2026-05-23T19:44:20.309473" elapsed="0.000102"/>
 </kw>
 <arg>200</arg>
-<status status="PASS" start="2026-05-23T12:58:21.739793" elapsed="0.000194"/>
+<status status="PASS" start="2026-05-23T19:44:20.309383" elapsed="0.000210"/>
 </kw>
 <kw name="And field has value">
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_value}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.740123" elapsed="0.000089"/>
+<status status="PASS" start="2026-05-23T19:44:20.309745" elapsed="0.000094"/>
 </kw>
 <arg>protocol</arg>
 <arg>tcp</arg>
-<status status="PASS" start="2026-05-23T12:58:21.740046" elapsed="0.000183"/>
+<status status="PASS" start="2026-05-23T19:44:20.309663" elapsed="0.000193"/>
 </kw>
 <kw name="And field has integer value">
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.740455" level="INFO">${expected_int} = 2000000</msg>
+<msg time="2026-05-23T19:44:20.310098" level="INFO">${expected_int} = 2000000</msg>
 <var>${expected_int}</var>
 <arg>${expected_value}</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.740370" elapsed="0.000132"/>
+<status status="PASS" start="2026-05-23T19:44:20.310013" elapsed="0.000134"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${body}[${field_name}]</arg>
 <arg>${expected_int}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.740537" elapsed="0.000092"/>
+<status status="PASS" start="2026-05-23T19:44:20.310183" elapsed="0.000094"/>
 </kw>
 <arg>target_bps</arg>
 <arg>2000000</arg>
-<status status="PASS" start="2026-05-23T12:58:21.740289" elapsed="0.000356"/>
+<status status="PASS" start="2026-05-23T19:44:20.309926" elapsed="0.000368"/>
 </kw>
 <doc>Wymaganie 5: mozna zakonczyc transfer dla wybranego bearera bez zatrzymywania pozostalych.</doc>
 <tag>bearer</tag>
@@ -678,67 +678,67 @@
 <tag>requirement_5</tag>
 <tag>stop</tag>
 <tag>transfer</tag>
-<status status="PASS" start="2026-05-23T12:58:21.709666" elapsed="0.031016"/>
+<status status="PASS" start="2026-05-23T19:44:20.279171" elapsed="0.031165"/>
 </test>
 <test id="s1-t5" name="EPC-TC-005 Zakonczenie nieaktywnego transferu zwraca blad" line="64">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.740980" elapsed="0.004443"/>
+<status status="PASS" start="2026-05-23T19:44:20.310600" elapsed="0.003968"/>
 </kw>
 <kw name="When I attach UE with ID 55" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.748636" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.748651" level="INFO">${body} = {'status': 'attached', 'ue_id': 55}</msg>
+<msg time="2026-05-23T19:44:20.318183" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.318209" level="INFO">${body} = {'status': 'attached', 'ue_id': 55}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.745687" elapsed="0.002970"/>
+<status status="PASS" start="2026-05-23T19:44:20.314758" elapsed="0.003459"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.748786" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.318415" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.748699" elapsed="0.000098"/>
+<status status="PASS" start="2026-05-23T19:44:20.318285" elapsed="0.000145"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.748888" level="INFO">${body} = {'status': 'attached', 'ue_id': 55}</msg>
+<msg time="2026-05-23T19:44:20.318549" level="INFO">${body} = {'status': 'attached', 'ue_id': 55}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.748825" elapsed="0.000074"/>
+<status status="PASS" start="2026-05-23T19:44:20.318469" elapsed="0.000094"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.745573" elapsed="0.003341"/>
+<status status="PASS" start="2026-05-23T19:44:20.314671" elapsed="0.003913"/>
 </kw>
 <kw name="When I stop traffic for UE 55 and bearer 9" source_name="When I stop traffic for UE ${ue_id} and bearer ${bearer_id}">
 <kw name="Stop Traffic" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.752299" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.752330" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 55, 'bearer_id': 9}</msg>
+<msg time="2026-05-23T19:44:20.322301" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.322326" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 55, 'bearer_id': 9}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.749053" elapsed="0.003287"/>
+<status status="PASS" start="2026-05-23T19:44:20.318785" elapsed="0.003550"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.752537" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.322514" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.752413" elapsed="0.000137"/>
+<status status="PASS" start="2026-05-23T19:44:20.322394" elapsed="0.000135"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.752653" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 55, 'bearer_id': 9}</msg>
+<msg time="2026-05-23T19:44:20.322652" level="INFO">${body} = {'status': 'traffic_stopped', 'ue_id': 55, 'bearer_id': 9}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.752583" elapsed="0.000081"/>
+<status status="PASS" start="2026-05-23T19:44:20.322568" elapsed="0.000098"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.748982" elapsed="0.003699"/>
+<status status="PASS" start="2026-05-23T19:44:20.318688" elapsed="0.003997"/>
 </kw>
 <kw name="Then response is client error">
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.753070" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
+<msg time="2026-05-23T19:44:20.323049" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
 <arg>400 &lt;= ${status_code} &lt; 500</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-05-23T12:58:21.752859" elapsed="0.000271">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.322851" elapsed="0.000263">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
-<status status="FAIL" start="2026-05-23T12:58:21.752774" elapsed="0.000394">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.322767" elapsed="0.000394">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
 <doc>Wymaganie 5: proba zatrzymania transferu, ktory nie zostal uruchomiony, powinna zwrocic blad.</doc>
 <tag>defect_candidate</tag>
@@ -747,216 +747,216 @@
 <tag>requirement_5</tag>
 <tag>stop</tag>
 <tag>transfer</tag>
-<status status="FAIL" start="2026-05-23T12:58:21.740791" elapsed="0.012437">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.310445" elapsed="0.012775">'400 &lt;= 200 &lt; 500' should be true.</status>
 </test>
 <test id="s1-t6" name="EPC-TC-006 Zakonczenie transferu dla wszystkich bearerow UE" line="71">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.753477" elapsed="0.003794"/>
+<status status="PASS" start="2026-05-23T19:44:20.323475" elapsed="0.004847"/>
 </kw>
 <kw name="When I attach UE with ID 56" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.762365" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.762391" level="INFO">${body} = {'status': 'attached', 'ue_id': 56}</msg>
+<msg time="2026-05-23T19:44:20.331710" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.331736" level="INFO">${body} = {'status': 'attached', 'ue_id': 56}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.757442" elapsed="0.004957"/>
+<status status="PASS" start="2026-05-23T19:44:20.328492" elapsed="0.003253"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.762583" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.331947" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.762469" elapsed="0.000125"/>
+<status status="PASS" start="2026-05-23T19:44:20.331818" elapsed="0.000145"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.762694" level="INFO">${body} = {'status': 'attached', 'ue_id': 56}</msg>
+<msg time="2026-05-23T19:44:20.332083" level="INFO">${body} = {'status': 'attached', 'ue_id': 56}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.762625" elapsed="0.000080"/>
+<status status="PASS" start="2026-05-23T19:44:20.332003" elapsed="0.000093"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.757367" elapsed="0.005354"/>
+<status status="PASS" start="2026-05-23T19:44:20.328414" elapsed="0.003700"/>
 </kw>
 <kw name="When I add bearer with ID 4 for UE 56" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
 <kw name="Add Bearer" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.765753" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.765776" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 56, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.335544" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.335568" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 56, 'bearer_id': 4}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.762910" elapsed="0.002874"/>
+<status status="PASS" start="2026-05-23T19:44:20.332306" elapsed="0.003271"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.765934" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.335755" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.765834" elapsed="0.000112"/>
+<status status="PASS" start="2026-05-23T19:44:20.335638" elapsed="0.000130"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.766048" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 56, 'bearer_id': 4}</msg>
+<msg time="2026-05-23T19:44:20.335885" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 56, 'bearer_id': 4}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.765980" elapsed="0.000079"/>
+<status status="PASS" start="2026-05-23T19:44:20.335805" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.762817" elapsed="0.003258"/>
+<status status="PASS" start="2026-05-23T19:44:20.332211" elapsed="0.003706"/>
 </kw>
 <kw name="When I start DL traffic for UE 56 on bearer 9 with protocol tcp at 2 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.771192" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.771222" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 9, 'target_bps': 2000000}</msg>
+<msg time="2026-05-23T19:44:20.342384" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.342408" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 9, 'target_bps': 2000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.766249" elapsed="0.004982"/>
+<status status="PASS" start="2026-05-23T19:44:20.336124" elapsed="0.006293"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.771439" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.342605" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.771305" elapsed="0.000148"/>
+<status status="PASS" start="2026-05-23T19:44:20.342484" elapsed="0.000135"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.771608" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 9, 'target_bps': 2000000}</msg>
+<msg time="2026-05-23T19:44:20.342770" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 9, 'target_bps': 2000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.771523" elapsed="0.000098"/>
+<status status="PASS" start="2026-05-23T19:44:20.342687" elapsed="0.000095"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.766156" elapsed="0.005485"/>
+<status status="PASS" start="2026-05-23T19:44:20.336021" elapsed="0.006781"/>
 </kw>
 <kw name="When I start DL traffic for UE 56 on bearer 4 with protocol udp at 3 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.776100" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.776131" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 4, 'target_bps': 3000000}</msg>
+<msg time="2026-05-23T19:44:20.347590" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.347618" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 4, 'target_bps': 3000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.771849" elapsed="0.004293"/>
+<status status="PASS" start="2026-05-23T19:44:20.343009" elapsed="0.004620"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.776308" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.347824" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.776199" elapsed="0.000122"/>
+<status status="PASS" start="2026-05-23T19:44:20.347697" elapsed="0.000144"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.776423" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 4, 'target_bps': 3000000}</msg>
+<msg time="2026-05-23T19:44:20.347967" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 56, 'bearer_id': 4, 'target_bps': 3000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.776354" elapsed="0.000081"/>
+<status status="PASS" start="2026-05-23T19:44:20.347882" elapsed="0.000099"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.771743" elapsed="0.004708"/>
+<status status="PASS" start="2026-05-23T19:44:20.342903" elapsed="0.005097"/>
 </kw>
 <kw name="When I stop all traffic for UE 56" source_name="When I stop all traffic for UE ${ue_id}">
 <kw name="Stop All Traffic For Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.777948" level="INFO">${status_code} = 404</msg>
-<msg time="2026-05-23T12:58:21.777964" level="INFO">${body} = {'detail': 'Not Found'}</msg>
+<msg time="2026-05-23T19:44:20.349593" level="INFO">${status_code} = 404</msg>
+<msg time="2026-05-23T19:44:20.349617" level="INFO">${body} = {'detail': 'Not Found'}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.776607" elapsed="0.001364"/>
+<status status="PASS" start="2026-05-23T19:44:20.348195" elapsed="0.001431"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.778078" level="INFO">${status_code} = 404</msg>
+<msg time="2026-05-23T19:44:20.349800" level="INFO">${status_code} = 404</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.778006" elapsed="0.000082"/>
+<status status="PASS" start="2026-05-23T19:44:20.349681" elapsed="0.000134"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.778184" level="INFO">${body} = {'detail': 'Not Found'}</msg>
+<msg time="2026-05-23T19:44:20.349939" level="INFO">${body} = {'detail': 'Not Found'}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.778117" elapsed="0.000077"/>
+<status status="PASS" start="2026-05-23T19:44:20.349856" elapsed="0.000096"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.776529" elapsed="0.001681"/>
+<status status="PASS" start="2026-05-23T19:44:20.348102" elapsed="0.001869"/>
 </kw>
 <kw name="Then response status is">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.778427" level="INFO">Argument types are:
+<msg time="2026-05-23T19:44:20.350318" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-05-23T12:58:21.778467" level="FAIL">404 != 200</msg>
+<msg time="2026-05-23T19:44:20.350367" level="FAIL">404 != 200</msg>
 <arg>${status_code}</arg>
 <arg>${expected_status_code}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-05-23T12:58:21.778361" elapsed="0.000153">404 != 200</status>
+<status status="FAIL" start="2026-05-23T19:44:20.350213" elapsed="0.000191">404 != 200</status>
 </kw>
 <arg>200</arg>
-<status status="FAIL" start="2026-05-23T12:58:21.778292" elapsed="0.000255">404 != 200</status>
+<status status="FAIL" start="2026-05-23T19:44:20.350057" elapsed="0.000390">404 != 200</status>
 </kw>
 <doc>Wymaganie 5: mozna zakonczyc transfer calkowicie dla wszystkich bearerow UE.</doc>
 <tag>defect_candidate</tag>
 <tag>requirement_5</tag>
 <tag>stop_all</tag>
 <tag>transfer</tag>
-<status status="FAIL" start="2026-05-23T12:58:21.753334" elapsed="0.025261">404 != 200</status>
+<status status="FAIL" start="2026-05-23T19:44:20.323329" elapsed="0.027185">404 != 200</status>
 </test>
 <test id="s1-t7" name="EPC-TC-007 Transfer powyzej 100 Mbps jest odrzucany" line="81">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.778805" elapsed="0.004600"/>
+<status status="PASS" start="2026-05-23T19:44:20.350769" elapsed="0.004630"/>
 </kw>
 <kw name="When I attach UE with ID 57" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.786892" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.786918" level="INFO">${body} = {'status': 'attached', 'ue_id': 57}</msg>
+<msg time="2026-05-23T19:44:20.358748" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.358771" level="INFO">${body} = {'status': 'attached', 'ue_id': 57}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.783669" elapsed="0.003258"/>
+<status status="PASS" start="2026-05-23T19:44:20.355676" elapsed="0.003103"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.787105" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.358964" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.786991" elapsed="0.000126"/>
+<status status="PASS" start="2026-05-23T19:44:20.358840" elapsed="0.000137"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.787224" level="INFO">${body} = {'status': 'attached', 'ue_id': 57}</msg>
+<msg time="2026-05-23T19:44:20.359094" level="INFO">${body} = {'status': 'attached', 'ue_id': 57}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.787150" elapsed="0.000088"/>
+<status status="PASS" start="2026-05-23T19:44:20.359014" elapsed="0.000092"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.783555" elapsed="0.003703"/>
+<status status="PASS" start="2026-05-23T19:44:20.355562" elapsed="0.003564"/>
 </kw>
 <kw name="When I start DL traffic for UE 57 on bearer 9 with protocol tcp at 101 Mbps" source_name="When I start DL traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps">
 <kw name="Start Traffic Mbps" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.791970" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.792001" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 57, 'bearer_id': 9, 'target_bps': 101000000}</msg>
+<msg time="2026-05-23T19:44:20.365075" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.365104" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 57, 'bearer_id': 9, 'target_bps': 101000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
 <arg>${bearer_id}</arg>
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.787463" elapsed="0.004548"/>
+<status status="PASS" start="2026-05-23T19:44:20.359331" elapsed="0.005782"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.792222" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.365494" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.792086" elapsed="0.000151"/>
+<status status="PASS" start="2026-05-23T19:44:20.365224" elapsed="0.000297"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.792358" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 57, 'bearer_id': 9, 'target_bps': 101000000}</msg>
+<msg time="2026-05-23T19:44:20.365678" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 57, 'bearer_id': 9, 'target_bps': 101000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.792277" elapsed="0.000094"/>
+<status status="PASS" start="2026-05-23T19:44:20.365578" elapsed="0.000116"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.787359" elapsed="0.005032"/>
+<status status="PASS" start="2026-05-23T19:44:20.359228" elapsed="0.006490"/>
 </kw>
 <kw name="Then response is client error">
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.792731" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
+<msg time="2026-05-23T19:44:20.366154" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
 <arg>400 &lt;= ${status_code} &lt; 500</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-05-23T12:58:21.792568" elapsed="0.000192">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.365920" elapsed="0.000271">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
-<status status="FAIL" start="2026-05-23T12:58:21.792478" elapsed="0.000317">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.365823" elapsed="0.000412">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
 <doc>Wymaganie 3: transfer dla UE nie moze przekroczyc 100 Mbps.</doc>
 <tag>defect_candidate</tag>
@@ -964,39 +964,39 @@
 <tag>requirement_3</tag>
 <tag>transfer</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2026-05-23T12:58:21.778684" elapsed="0.014162">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.350624" elapsed="0.015674">'400 &lt;= 200 &lt; 500' should be true.</status>
 </test>
 <test id="s1-t8" name="EPC-TC-008 Transfer w kierunku innym niz DL jest odrzucany" line="88">
 <kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
-<status status="PASS" start="2026-05-23T12:58:21.793137" elapsed="0.004174"/>
+<status status="PASS" start="2026-05-23T19:44:20.366578" elapsed="0.004549"/>
 </kw>
 <kw name="When I attach UE with ID 58" source_name="When I attach UE with ID ${ue_id}">
 <kw name="Attach Ue" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.800996" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.801019" level="INFO">${body} = {'status': 'attached', 'ue_id': 58}</msg>
+<msg time="2026-05-23T19:44:20.373905" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.373927" level="INFO">${body} = {'status': 'attached', 'ue_id': 58}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.797590" elapsed="0.003437"/>
+<status status="PASS" start="2026-05-23T19:44:20.371346" elapsed="0.002589"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.801210" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.374096" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.801089" elapsed="0.000137"/>
+<status status="PASS" start="2026-05-23T19:44:20.373986" elapsed="0.000122"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.801337" level="INFO">${body} = {'status': 'attached', 'ue_id': 58}</msg>
+<msg time="2026-05-23T19:44:20.374217" level="INFO">${body} = {'status': 'attached', 'ue_id': 58}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.801262" elapsed="0.000087"/>
+<status status="PASS" start="2026-05-23T19:44:20.374143" elapsed="0.000086"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.797478" elapsed="0.003892"/>
+<status status="PASS" start="2026-05-23T19:44:20.371255" elapsed="0.002992"/>
 </kw>
 <kw name="When I start traffic for UE 58 on bearer 9 with protocol tcp at 1 Mbps and direction UL" source_name="When I start traffic for UE ${ue_id} on bearer ${bearer_id} with protocol ${protocol} at ${mbps} Mbps and direction ${direction}">
 <kw name="Start Traffic With Direction" owner="EpcApiLibrary">
-<msg time="2026-05-23T12:58:21.806878" level="INFO">${status_code} = 200</msg>
-<msg time="2026-05-23T12:58:21.806899" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 58, 'bearer_id': 9, 'target_bps': 1000000}</msg>
+<msg time="2026-05-23T19:44:20.380144" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.380170" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 58, 'bearer_id': 9, 'target_bps': 1000000}</msg>
 <var>${status_code}</var>
 <var>${body}</var>
 <arg>${ue_id}</arg>
@@ -1004,30 +1004,30 @@
 <arg>${protocol}</arg>
 <arg>${mbps}</arg>
 <arg>${direction}</arg>
-<status status="PASS" start="2026-05-23T12:58:21.801563" elapsed="0.005344"/>
+<status status="PASS" start="2026-05-23T19:44:20.374432" elapsed="0.005746"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.807072" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T19:44:20.380458" level="INFO">${status_code} = 200</msg>
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.806961" elapsed="0.000123"/>
+<status status="PASS" start="2026-05-23T19:44:20.380253" elapsed="0.000227"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.807187" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 58, 'bearer_id': 9, 'target_bps': 1000000}</msg>
+<msg time="2026-05-23T19:44:20.380630" level="INFO">${body} = {'status': 'traffic_started', 'ue_id': 58, 'bearer_id': 9, 'target_bps': 1000000}</msg>
 <arg>${body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2026-05-23T12:58:21.807116" elapsed="0.000086"/>
+<status status="PASS" start="2026-05-23T19:44:20.380541" elapsed="0.000102"/>
 </kw>
-<status status="PASS" start="2026-05-23T12:58:21.801464" elapsed="0.005759"/>
+<status status="PASS" start="2026-05-23T19:44:20.374337" elapsed="0.006327"/>
 </kw>
 <kw name="Then response is client error">
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-05-23T12:58:21.807547" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
+<msg time="2026-05-23T19:44:20.381039" level="FAIL">'400 &lt;= 200 &lt; 500' should be true.</msg>
 <arg>400 &lt;= ${status_code} &lt; 500</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-05-23T12:58:21.807379" elapsed="0.000196">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.380864" elapsed="0.000206">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
-<status status="FAIL" start="2026-05-23T12:58:21.807305" elapsed="0.000305">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.380769" elapsed="0.000341">'400 &lt;= 200 &lt; 500' should be true.</status>
 </kw>
 <doc>Wymaganie 3: transfer mozna uruchomic tylko w kierunku DL.</doc>
 <tag>defect_candidate</tag>
@@ -1035,12 +1035,12 @@
 <tag>negative</tag>
 <tag>requirement_3</tag>
 <tag>transfer</tag>
-<status status="FAIL" start="2026-05-23T12:58:21.792980" elapsed="0.014681">'400 &lt;= 200 &lt; 500' should be true.</status>
+<status status="FAIL" start="2026-05-23T19:44:20.366422" elapsed="0.014747">'400 &lt;= 200 &lt; 500' should be true.</status>
 </test>
 <doc>Testy akceptacyjne sterowania transferem danych EPC.
 Zakres: rozpoczecie transferu DL, zakonczenie dla jednego i wszystkich bearerow,
 oraz obsluga bledow dla nieaktywnego bearera i wartosci spoza specyfikacji.</doc>
-<status status="FAIL" start="2026-05-23T12:58:21.601218" elapsed="0.206649"/>
+<status status="FAIL" start="2026-05-23T19:44:20.182624" elapsed="0.198753"/>
 </suite>
 <statistics>
 <total>
