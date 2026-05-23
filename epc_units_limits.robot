@@ -1,6 +1,6 @@
 
 *** Settings ***
-Documentation    Testy dla Osoby 4 — Odczyty, jednostki i limity.
+Documentation    Testy Odczyty, jednostki i limity.
 ...              Zakres: Sprawdzenie transferu (funkcjonalność 4), walidacja założeń,
 ...              odczyt pojedynczy i sumaryczny, zmiana jednostek (domyślnie kbps),
 ...              testy brzegowe dla transferu (max 100 Mbps) oraz ilości UE (0–100).
@@ -19,7 +19,7 @@ ${EPC_BASE_URL}       http://localhost:8000
 # ---------------------------------------------------------------------------
 # 4.1  Odczyt pojedynczy — domyślna jednostka to kbps
 # ---------------------------------------------------------------------------
-Odczyt pojedynczy — domyślna jednostka kbps
+EPC4.1 Odczyt pojedynczy — domyślna jednostka kbps
     [Documentation]    4.1 Gdy nie podamy parametru unit, statystyki bearera
     ...                są zwracane w kbps (domyślna jednostka per README).
     [Tags]    stats    units    happy_path
@@ -35,7 +35,7 @@ Odczyt pojedynczy — domyślna jednostka kbps
 # ---------------------------------------------------------------------------
 # 4.2  Odczyt pojedynczy — jawna jednostka kbps
 # ---------------------------------------------------------------------------
-Odczyt pojedynczy — jawna jednostka kbps
+EPC4.2 Odczyt pojedynczy — jawna jednostka kbps
     [Documentation]    4.2 Podanie unit=kbps daje taki sam wynik jak brak parametru.
     [Tags]    stats    units    happy_path
     When I attach UE with ID 51
@@ -48,7 +48,7 @@ Odczyt pojedynczy — jawna jednostka kbps
 # ---------------------------------------------------------------------------
 # 4.3  Odczyt pojedynczy — jednostka Mbps
 # ---------------------------------------------------------------------------
-Odczyt pojedynczy — jednostka Mbps
+EPC4.3 Odczyt pojedynczy — jednostka Mbps
     [Documentation]    4.3 Podanie unit=Mbps zwraca wartość przeliczoną do megabitów.
     [Tags]    stats    units    happy_path
     When I attach UE with ID 52
@@ -61,7 +61,7 @@ Odczyt pojedynczy — jednostka Mbps
 # ---------------------------------------------------------------------------
 # 4.4  Odczyt sumaryczny — suma transferów ze wszystkich bearerów UE
 # ---------------------------------------------------------------------------
-Odczyt sumaryczny — suma transferów ze wszystkich bearerów
+EPC4.4 Odczyt sumaryczny — suma transferów ze wszystkich bearerów
     [Documentation]    4.4 GET /ues/{ue_id}/traffic zwraca sumaryczny transfer
     ...                ze wszystkich aktywnych bearerów danego UE.
     ...                Bearer 9 (10 Mbps) + bearer 3 (5 Mbps) = 15 000 kbps.
@@ -79,7 +79,7 @@ Odczyt sumaryczny — suma transferów ze wszystkich bearerów
 # ---------------------------------------------------------------------------
 # 4.5  Odczyt sumaryczny — jednostka Mbps
 # ---------------------------------------------------------------------------
-Odczyt sumaryczny — jednostka Mbps
+EPC4.5 Odczyt sumaryczny — jednostka Mbps
     [Documentation]    4.5 Sumaryczny odczyt z unit=Mbps — wynik w megabitach.
     [Tags]    stats    summary    units    happy_path
     When I attach UE with ID 54
@@ -94,7 +94,7 @@ Odczyt sumaryczny — jednostka Mbps
 # ---------------------------------------------------------------------------
 # 4.6  Test brzegowy transferu — dokładnie 100 Mbps (maksimum) → sukces
 # ---------------------------------------------------------------------------
-Testy brzegowe transferu — dokładnie 100 Mbps
+EPC4.6 Testy brzegowe transferu — dokładnie 100 Mbps
     [Documentation]    4.6 Transfer ustawiony na dokładnie 100 Mbps (limit górny)
     ...                powinien zakończyć się sukcesem.
     [Tags]    traffic    boundary    happy_path
@@ -106,7 +106,7 @@ Testy brzegowe transferu — dokładnie 100 Mbps
 # ---------------------------------------------------------------------------
 # 4.7  Test brzegowy transferu — powyżej 100 Mbps → błąd walidacji
 # ---------------------------------------------------------------------------
-Testy brzegowe transferu — powyżej 100 Mbps (100.1) daje błąd
+EPC4.7 Testy brzegowe transferu — powyżej 100 Mbps (100.1) daje błąd
     [Documentation]    4.7 Transfer powyżej 100 Mbps jest poza dozwolonym zakresem
     ...                i powinien zwrócić HTTP 422.
     [Tags]    traffic    boundary    validation
@@ -117,7 +117,7 @@ Testy brzegowe transferu — powyżej 100 Mbps (100.1) daje błąd
 # ---------------------------------------------------------------------------
 # 4.8  Test brzegowy transferu — ujemny transfer → błąd walidacji
 # ---------------------------------------------------------------------------
-Testy brzegowe transferu — ujemna wartość daje błąd
+EPC4.8 Testy brzegowe transferu — ujemna wartość daje błąd
     [Documentation]    4.8 Ujemna prędkość transferu jest nieprawidłowa
     ...                i powinna zwrócić HTTP 422.
     [Tags]    traffic    boundary    validation
@@ -128,7 +128,7 @@ Testy brzegowe transferu — ujemna wartość daje błąd
 # ---------------------------------------------------------------------------
 # 4.9  Test brzegowy UE ID — UE ID = 1 (minimum poprawne) → sukces
 # ---------------------------------------------------------------------------
-Testy brzegowe UE — UE ID 1 (minimum) jest poprawne
+EPC4.9 Testy brzegowe UE — UE ID 1 (minimum) jest poprawne
     [Documentation]    4.9 UE ID = 1 jest minimalną poprawną wartością w zakresie 1–100.
     [Tags]    attach    boundary    happy_path
     When I attach UE with ID 1
@@ -138,7 +138,7 @@ Testy brzegowe UE — UE ID 1 (minimum) jest poprawne
 # ---------------------------------------------------------------------------
 # 4.10  Test brzegowy UE ID — UE ID = 100 (maksimum poprawne) → sukces
 # ---------------------------------------------------------------------------
-Testy brzegowe UE — UE ID 100 (maksimum) jest poprawne
+EPC4.10 Testy brzegowe UE — UE ID 100 (maksimum) jest poprawne
     [Documentation]    4.10 UE ID = 100 jest maksymalną poprawną wartością w zakresie 1–100.
     [Tags]    attach    boundary    happy_path
     When I attach UE with ID 100
@@ -148,7 +148,7 @@ Testy brzegowe UE — UE ID 100 (maksimum) jest poprawne
 # ---------------------------------------------------------------------------
 # 4.11  Test brzegowy UE ID — UE ID = 0 → błąd walidacji
 # ---------------------------------------------------------------------------
-Testy brzegowe UE — UE ID 0 jest poza zakresem
+EPC4.11 Testy brzegowe UE — UE ID 0 jest poza zakresem
     [Documentation]    4.11 UE ID = 0 jest poniżej dozwolonego zakresu (1–100)
     ...                i powinien zwrócić HTTP 422.
     [Tags]    attach    boundary    validation
@@ -158,7 +158,7 @@ Testy brzegowe UE — UE ID 0 jest poza zakresem
 # ---------------------------------------------------------------------------
 # 4.12  Test brzegowy UE ID — UE ID = 101 → błąd walidacji
 # ---------------------------------------------------------------------------
-Testy brzegowe UE — UE ID 101 jest poza zakresem
+EPC4.12 Testy brzegowe UE — UE ID 101 jest poza zakresem
     [Documentation]    4.12 UE ID = 101 przekracza dozwolony zakres (1–100)
     ...                i powinien zwrócić HTTP 422.
     [Tags]    attach    boundary    validation
