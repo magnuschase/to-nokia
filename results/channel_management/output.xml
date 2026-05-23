@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.12 on darwin)" generated="2026-05-23T12:54:52.171809" rpa="false" schemaversion="5">
+<suite id="s1" name="Channel Management" source="/Users/jakubkapala/Code/studia/sem6/to-nokia/to-nokia/channel_management.robot">
+<test id="s1-t1" name="06.01 Dodaj dedykowany bearer - Sukces" line="14">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.204566" elapsed="0.009290"/>
+</kw>
+<kw name="When I attach UE with ID 21" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.217834" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.217868" level="INFO">${body} = {'status': 'attached', 'ue_id': 21}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.214189" elapsed="0.003691"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.218127" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.217959" elapsed="0.000184"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.218277" level="INFO">${body} = {'status': 'attached', 'ue_id': 21}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.218186" elapsed="0.000106"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.214059" elapsed="0.004257"/>
+</kw>
+<kw name="When I add bearer with ID 4 for UE 21" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.221864" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.221890" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 21, 'bearer_id': 4}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.218584" elapsed="0.003316"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.222089" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.221967" elapsed="0.000137"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.222231" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 21, 'bearer_id': 4}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.222144" elapsed="0.000100"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.218453" elapsed="0.003812"/>
+</kw>
+<kw name="Then response is success">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>200 &lt;= ${status_code} &lt; 300</arg>
+<arg>msg=Oczekiwano sukcesu (2xx), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.222431" elapsed="0.000185"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to sukces (od 200 do 299).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.222348" elapsed="0.000289"/>
+</kw>
+<kw name="And field has value">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${body}[${field_name}]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.222803" elapsed="0.000113"/>
+</kw>
+<arg>status</arg>
+<arg>bearer_added</arg>
+<status status="PASS" start="2026-05-23T12:54:52.222711" elapsed="0.000224"/>
+</kw>
+<kw name="When I get UE with ID 21" source_name="When I get UE with ID ${ue_id}">
+<kw name="Get Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.225192" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.225219" level="INFO">${body} = {'ue_id': 21, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '4': {'bearer_id': 4, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.223087" elapsed="0.002143"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.225410" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.225290" elapsed="0.000135"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.225538" level="INFO">${body} = {'ue_id': 21, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '4': {'bearer_id': 4, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.225463" elapsed="0.000087"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.223008" elapsed="0.002560"/>
+</kw>
+<kw name="And UE has bearer with ID">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${body}[bearers]</arg>
+<arg>${bearer_id}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.225741" elapsed="0.000069"/>
+</kw>
+<arg>4</arg>
+<status status="PASS" start="2026-05-23T12:54:52.225655" elapsed="0.000175"/>
+</kw>
+<doc>6. Możliwe jest dodanie dedykowanych bearer-ów dla UE.</doc>
+<tag>add</tag>
+<tag>bearer</tag>
+<tag>happy_path</tag>
+<status status="PASS" start="2026-05-23T12:54:52.204238" elapsed="0.021639"/>
+</test>
+<test id="s1-t2" name="06.02 Dodaj bearer - Błąd gdy ID poza zakresem" line="24">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.226146" elapsed="0.003835"/>
+</kw>
+<kw name="When I attach UE with ID 22" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.233430" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.233458" level="INFO">${body} = {'status': 'attached', 'ue_id': 22}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.230222" elapsed="0.003246"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.233667" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.233533" elapsed="0.000149"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.233807" level="INFO">${body} = {'status': 'attached', 'ue_id': 22}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.233721" elapsed="0.000114"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.230119" elapsed="0.003743"/>
+</kw>
+<kw name="When I add bearer with ID 0 for UE 22" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.236026" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T12:54:52.236050" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'bearer_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.234194" elapsed="0.001865"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.236229" level="INFO">${status_code} = 422</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.236116" elapsed="0.000214"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.236439" level="INFO">${body} = {'detail': [{'type': 'greater_than_equal', 'loc': ['body', 'bearer_id'], 'msg': 'Input should be greater than or equal to 1', 'input': 0, 'ctx': {'ge': 1}}]}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.236363" elapsed="0.000088"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.234062" elapsed="0.002406"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.236633" elapsed="0.000168"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.236554" elapsed="0.000269"/>
+</kw>
+<kw name="When I add bearer with ID 10 for UE 22" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.238522" level="INFO">${status_code} = 422</msg>
+<msg time="2026-05-23T12:54:52.238544" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'bearer_id'], 'msg': 'Input should be less than or equal to 9', 'input': 10, 'ctx': {'le': 9}}]}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.236979" elapsed="0.001575"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.238723" level="INFO">${status_code} = 422</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.238607" elapsed="0.000131"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.238847" level="INFO">${body} = {'detail': [{'type': 'less_than_equal', 'loc': ['body', 'bearer_id'], 'msg': 'Input should be less than or equal to 9', 'input': 10, 'ctx': {'le': 9}}]}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.238772" elapsed="0.000086"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.236895" elapsed="0.001980"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.239012" elapsed="0.000133"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.238944" elapsed="0.000220"/>
+</kw>
+<doc>6. Jeśli bearer jest spoza zakresu (1-9) - zostanie wyświetlony błąd.</doc>
+<tag>add</tag>
+<tag>bearer</tag>
+<tag>validation</tag>
+<status status="PASS" start="2026-05-23T12:54:52.225998" elapsed="0.013207"/>
+</test>
+<test id="s1-t3" name="06.03 Dodaj bearer - Błąd gdy bearer został już dodany" line="35">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.239440" elapsed="0.003980"/>
+</kw>
+<kw name="When I attach UE with ID 23" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.247241" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.247266" level="INFO">${body} = {'status': 'attached', 'ue_id': 23}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.243633" elapsed="0.003642"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.247481" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.247332" elapsed="0.000165"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.247628" level="INFO">${body} = {'status': 'attached', 'ue_id': 23}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.247537" elapsed="0.000104"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.243542" elapsed="0.004118"/>
+</kw>
+<kw name="When I add bearer with ID 9 for UE 23" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.250136" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.250168" level="INFO">${body} = {'detail': 'Bearer already exists'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.247827" elapsed="0.002355"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.250480" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.250320" elapsed="0.000172"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.250593" level="INFO">${body} = {'detail': 'Bearer already exists'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.250524" elapsed="0.000080"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.247740" elapsed="0.002887"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.250811" elapsed="0.000160"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.250731" elapsed="0.000262"/>
+</kw>
+<kw name="When I add bearer with ID 5 for UE 23" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.255154" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.255190" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 23, 'bearer_id': 5}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.251147" elapsed="0.004054"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.255429" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.255287" elapsed="0.000156"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.255553" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 23, 'bearer_id': 5}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.255477" elapsed="0.000087"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.251064" elapsed="0.004519"/>
+</kw>
+<kw name="Then response is success">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>200 &lt;= ${status_code} &lt; 300</arg>
+<arg>msg=Oczekiwano sukcesu (2xx), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.255752" elapsed="0.000146"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to sukces (od 200 do 299).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.255665" elapsed="0.000290"/>
+</kw>
+<kw name="When I add bearer with ID 5 for UE 23" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.258364" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.258389" level="INFO">${body} = {'detail': 'Bearer already exists'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.256117" elapsed="0.002281"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.258592" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.258465" elapsed="0.000142"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.258732" level="INFO">${body} = {'detail': 'Bearer already exists'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.258645" elapsed="0.000100"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.256035" elapsed="0.002730"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.258935" elapsed="0.000157"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.258853" elapsed="0.000263"/>
+</kw>
+<doc>6. Jeśli bearer został już dodany - zostanie wyświetlony błąd.</doc>
+<tag>add</tag>
+<tag>bearer</tag>
+<tag>error</tag>
+<status status="PASS" start="2026-05-23T12:54:52.239316" elapsed="0.019846"/>
+</test>
+<test id="s1-t4" name="07.01 Sprawdzenie podłączonych bearer-ów - Sukces" line="48">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.259412" elapsed="0.006512"/>
+</kw>
+<kw name="When I attach UE with ID 24" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.269604" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.269632" level="INFO">${body} = {'status': 'attached', 'ue_id': 24}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.266169" elapsed="0.003473"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.269843" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.269707" elapsed="0.000150"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.269970" level="INFO">${body} = {'status': 'attached', 'ue_id': 24}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.269890" elapsed="0.000095"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.266066" elapsed="0.003939"/>
+</kw>
+<kw name="When I add bearer with ID 2 for UE 24" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.273511" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.273535" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 24, 'bearer_id': 2}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.270194" elapsed="0.003350"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.273725" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.273606" elapsed="0.000131"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.273832" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 24, 'bearer_id': 2}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.273765" elapsed="0.000077"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.270100" elapsed="0.003759"/>
+</kw>
+<kw name="When I add bearer with ID 3 for UE 24" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.277260" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.277284" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 24, 'bearer_id': 3}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.274039" elapsed="0.003254"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.277463" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.277348" elapsed="0.000130"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.277587" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 24, 'bearer_id': 3}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.277515" elapsed="0.000084"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.273950" elapsed="0.003668"/>
+</kw>
+<kw name="When I get UE with ID 24" source_name="When I get UE with ID ${ue_id}">
+<kw name="Get Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.279916" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.279938" level="INFO">${body} = {'ue_id': 24, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '2': {'bearer_id': 2, 'protocol': None, 'target_bps': None, 'active': False}, '3': {'bearer_id':...</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.277885" elapsed="0.002061"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.280088" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.279988" elapsed="0.000113"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.280214" level="INFO">${body} = {'ue_id': 24, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '2': {'bearer_id': 2, 'protocol': None, 'target_bps': None, 'active': False}, '3': {'bearer_id':...</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.280134" elapsed="0.000092"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.277710" elapsed="0.002534"/>
+</kw>
+<kw name="Then response is success">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>200 &lt;= ${status_code} &lt; 300</arg>
+<arg>msg=Oczekiwano sukcesu (2xx), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.280378" elapsed="0.000123"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to sukces (od 200 do 299).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.280314" elapsed="0.000203"/>
+</kw>
+<kw name="And UE has bearer with ID">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${body}[bearers]</arg>
+<arg>${bearer_id}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.280670" elapsed="0.000053"/>
+</kw>
+<arg>9</arg>
+<status status="PASS" start="2026-05-23T12:54:52.280605" elapsed="0.000134"/>
+</kw>
+<kw name="And UE has bearer with ID">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${body}[bearers]</arg>
+<arg>${bearer_id}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.280853" elapsed="0.000041"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2026-05-23T12:54:52.280790" elapsed="0.000119"/>
+</kw>
+<kw name="And UE has bearer with ID">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${body}[bearers]</arg>
+<arg>${bearer_id}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.281019" elapsed="0.000040"/>
+</kw>
+<arg>3</arg>
+<status status="PASS" start="2026-05-23T12:54:52.280959" elapsed="0.000115"/>
+</kw>
+<doc>7. Możliwe jest sprawdzenia aktualnie dostępnych bearerów dla UE.</doc>
+<tag>bearer</tag>
+<tag>check</tag>
+<tag>happy_path</tag>
+<status status="PASS" start="2026-05-23T12:54:52.259274" elapsed="0.021840"/>
+</test>
+<test id="s1-t5" name="08.01 Usuń dedykowany bearer - Sukces" line="61">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.281328" elapsed="0.005820"/>
+</kw>
+<kw name="When I attach UE with ID 31" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.291543" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.291574" level="INFO">${body} = {'status': 'attached', 'ue_id': 31}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.287433" elapsed="0.004151"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.291817" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.291673" elapsed="0.000159"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.291948" level="INFO">${body} = {'status': 'attached', 'ue_id': 31}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.291869" elapsed="0.000091"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.287314" elapsed="0.004668"/>
+</kw>
+<kw name="When I add bearer with ID 5 for UE 31" source_name="When I add bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Add Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.297266" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.297295" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 31, 'bearer_id': 5}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.292316" elapsed="0.004988"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.297517" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.297381" elapsed="0.000150"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.297647" level="INFO">${body} = {'status': 'bearer_added', 'ue_id': 31, 'bearer_id': 5}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.297568" elapsed="0.000091"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.292107" elapsed="0.005574"/>
+</kw>
+<kw name="When I delete bearer with ID 5 for UE 31" source_name="When I delete bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Delete Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.302432" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.302458" level="INFO">${body} = {'status': 'bearer_deleted', 'ue_id': 31, 'bearer_id': 5}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.297886" elapsed="0.004581"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.302656" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.302533" elapsed="0.000136"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.302778" level="INFO">${body} = {'status': 'bearer_deleted', 'ue_id': 31, 'bearer_id': 5}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.302702" elapsed="0.000089"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.297786" elapsed="0.005024"/>
+</kw>
+<kw name="Then response is success">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>200 &lt;= ${status_code} &lt; 300</arg>
+<arg>msg=Oczekiwano sukcesu (2xx), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.302981" elapsed="0.000152"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to sukces (od 200 do 299).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.302896" elapsed="0.000257"/>
+</kw>
+<kw name="And field has value">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${body}[${field_name}]</arg>
+<arg>${expected_value}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.303303" elapsed="0.000102"/>
+</kw>
+<arg>status</arg>
+<arg>bearer_deleted</arg>
+<status status="PASS" start="2026-05-23T12:54:52.303221" elapsed="0.000201"/>
+</kw>
+<doc>8. Możliwe jest usunięcie dedykowanego bearer'a dla UE.</doc>
+<tag>bearer</tag>
+<tag>delete</tag>
+<tag>happy_path</tag>
+<status status="PASS" start="2026-05-23T12:54:52.281204" elapsed="0.022258"/>
+</test>
+<test id="s1-t6" name="08.02 Usuń bearer - Błąd gdy ID poza zakresem" line="70">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.303835" elapsed="0.005068"/>
+</kw>
+<kw name="When I attach UE with ID 32" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.313245" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.313280" level="INFO">${body} = {'status': 'attached', 'ue_id': 32}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.309200" elapsed="0.004090"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.313556" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.313387" elapsed="0.000185"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.313696" level="INFO">${body} = {'status': 'attached', 'ue_id': 32}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.313612" elapsed="0.000097"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.309078" elapsed="0.004654"/>
+</kw>
+<kw name="When I delete bearer with ID 0 for UE 32" source_name="When I delete bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Delete Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.317084" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.317113" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.314009" elapsed="0.003113"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.317338" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.317195" elapsed="0.000157"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.317470" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.317390" elapsed="0.000093"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.313849" elapsed="0.003657"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.317696" elapsed="0.000164"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.317608" elapsed="0.000276"/>
+</kw>
+<kw name="When I delete bearer with ID 10 for UE 32" source_name="When I delete bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Delete Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.319909" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.319925" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.318042" elapsed="0.001891"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.320065" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.319976" elapsed="0.000101"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.320185" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.320110" elapsed="0.000088"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.317961" elapsed="0.002253"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.320349" elapsed="0.000128"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.320279" elapsed="0.000217"/>
+</kw>
+<doc>8. Jeśli bearer jest spoza zakresu - zostanie wyświetlony błąd.</doc>
+<tag>bearer</tag>
+<tag>delete</tag>
+<tag>validation</tag>
+<status status="PASS" start="2026-05-23T12:54:52.303693" elapsed="0.016851"/>
+</test>
+<test id="s1-t7" name="08.03 Usuń bearer - Błąd gdy bearer nie jest aktywny" line="79">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.320784" elapsed="0.003760"/>
+</kw>
+<kw name="When I attach UE with ID 33" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.327662" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.327686" level="INFO">${body} = {'status': 'attached', 'ue_id': 33}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.324779" elapsed="0.002915"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.327867" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.327746" elapsed="0.000140"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.327994" level="INFO">${body} = {'status': 'attached', 'ue_id': 33}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.327921" elapsed="0.000084"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.324674" elapsed="0.003347"/>
+</kw>
+<kw name="When I delete bearer with ID 5 for UE 33" source_name="When I delete bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Delete Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.329646" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.329659" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.328176" elapsed="0.001490"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.329776" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.329700" elapsed="0.000087"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.329880" level="INFO">${body} = {'detail': 'Bearer not found'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.329815" elapsed="0.000076"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.328100" elapsed="0.001805"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.330026" elapsed="0.000139"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.329965" elapsed="0.000218"/>
+</kw>
+<doc>8. Jeśli bearer nie jest aktywny - zostanie wyświetlony błąd.</doc>
+<tag>bearer</tag>
+<tag>delete</tag>
+<tag>error</tag>
+<status status="PASS" start="2026-05-23T12:54:52.320644" elapsed="0.009574"/>
+</test>
+<test id="s1-t8" name="08.04 Usuń bearer - Nie można usunąć domyślnego (9)" line="87">
+<kw name="Reset Simulator" owner="EpcApiLibrary" type="SETUP">
+<status status="PASS" start="2026-05-23T12:54:52.330441" elapsed="0.004511"/>
+</kw>
+<kw name="When I attach UE with ID 34" source_name="When I attach UE with ID ${ue_id}">
+<kw name="Attach Ue" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.338252" level="INFO">${status_code} = 200</msg>
+<msg time="2026-05-23T12:54:52.338278" level="INFO">${body} = {'status': 'attached', 'ue_id': 34}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.335210" elapsed="0.003077"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.338470" level="INFO">${status_code} = 200</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.338343" elapsed="0.000142"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.338586" level="INFO">${body} = {'status': 'attached', 'ue_id': 34}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.338516" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.335101" elapsed="0.003544"/>
+</kw>
+<kw name="When I delete bearer with ID 9 for UE 34" source_name="When I delete bearer with ID ${bearer_id} for UE ${ue_id}">
+<kw name="Delete Bearer" owner="EpcApiLibrary">
+<msg time="2026-05-23T12:54:52.340458" level="INFO">${status_code} = 400</msg>
+<msg time="2026-05-23T12:54:52.340480" level="INFO">${body} = {'detail': 'Cannot remove default bearer'}</msg>
+<var>${status_code}</var>
+<var>${body}</var>
+<arg>${ue_id}</arg>
+<arg>${bearer_id}</arg>
+<status status="PASS" start="2026-05-23T12:54:52.338831" elapsed="0.001658"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.340656" level="INFO">${status_code} = 400</msg>
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.340543" elapsed="0.000128"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-05-23T12:54:52.340790" level="INFO">${body} = {'detail': 'Cannot remove default bearer'}</msg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.340708" elapsed="0.000094"/>
+</kw>
+<status status="PASS" start="2026-05-23T12:54:52.338740" elapsed="0.002080"/>
+</kw>
+<kw name="Then response is error">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${status_code} &gt;= 400</arg>
+<arg>msg=Oczekiwano błędu (&gt;=400), ale otrzymano ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-05-23T12:54:52.340979" elapsed="0.000155"/>
+</kw>
+<doc>Sprawdza, czy kod HTTP to błąd klienta/serwera (400 lub więcej).</doc>
+<status status="PASS" start="2026-05-23T12:54:52.340898" elapsed="0.000258"/>
+</kw>
+<doc>8. Nie ma możliwości usunięcia domyślnego bearera.</doc>
+<tag>bearer</tag>
+<tag>delete</tag>
+<tag>error</tag>
+<status status="PASS" start="2026-05-23T12:54:52.330313" elapsed="0.010884"/>
+</test>
+<doc>Testy akceptacyjne API symulatora EPC - Obszar 2: Zarządzanie kanałami (Bearer).
+Obejmuje funkcjonalności: 6 (Dodawanie), 7 (Sprawdzanie), 8 (Usuwanie).
+Przed uruchomieniem: docker run -p 8000:8000 epc-simulator:1.0.0</doc>
+<status status="PASS" start="2026-05-23T12:54:52.173202" elapsed="0.168202"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">add</stat>
+<stat pass="8" fail="0" skip="0">bearer</stat>
+<stat pass="1" fail="0" skip="0">check</stat>
+<stat pass="4" fail="0" skip="0">delete</stat>
+<stat pass="3" fail="0" skip="0">error</stat>
+<stat pass="3" fail="0" skip="0">happy_path</stat>
+<stat pass="2" fail="0" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Channel Management" id="s1" pass="8" fail="0" skip="0">Channel Management</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

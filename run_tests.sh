@@ -9,7 +9,7 @@ RESULTS_DIR="${RESULTS_DIR:-$SCRIPT_DIR/results}"
 ROBOT_FILES=(
     epc_session_management.robot
     epc_transfer_control.robot
-    channel_managment.robot
+    channel_management.robot
 )
 
 exit_code=0
