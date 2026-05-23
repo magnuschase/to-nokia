@@ -66,11 +66,29 @@ class EpcApiLibrary:
         )
         return r.status_code, self._safe_json(r)
 
+    def start_traffic_with_direction(
+        self, ue_id: int, bearer_id: int, protocol: str, mbps: float, direction: str
+    ) -> tuple[int, Any]:
+        r = self._session.post(
+            f"{self._base}/ues/{int(ue_id)}/bearers/{int(bearer_id)}/traffic",
+            json={
+                "protocol": protocol,
+                "Mbps": float(mbps),
+                "direction": direction,
+            },
+            timeout=10,
+        )
+        return r.status_code, self._safe_json(r)
+
     def stop_traffic(self, ue_id: int, bearer_id: int) -> tuple[int, Any]:
         r = self._session.delete(
             f"{self._base}/ues/{int(ue_id)}/bearers/{int(bearer_id)}/traffic",
             timeout=10,
         )
+        return r.status_code, self._safe_json(r)
+
+    def stop_all_traffic_for_ue(self, ue_id: int) -> tuple[int, Any]:
+        r = self._session.delete(f"{self._base}/ues/{int(ue_id)}/traffic", timeout=10)
         return r.status_code, self._safe_json(r)
 
     def get_bearer_traffic_stats(self, ue_id: int, bearer_id: int) -> tuple[int, Any]:
