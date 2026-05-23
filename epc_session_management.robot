@@ -14,7 +14,7 @@ ${DOC_UE_ID_MAX}         100
 ${DOC_DEFAULT_BEARER}    9
 
 *** Test Cases ***
-# --- 1. Attach (pkt 1) — 5 testów ---
+# --- 1. Attach (pkt 1) — 4 testy ---
 
 EPC-SM-1-001 Attach — sukces, bearer 9 i granice dokumentowane 0 oraz 100
     [Documentation]    1.1, 1.4, Założenia: attach w zakresie; po attach bearer 9; UE=0 i UE=100 na granicach.
