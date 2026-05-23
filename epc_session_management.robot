@@ -14,9 +14,9 @@ ${DOC_UE_ID_MAX}         100
 ${DOC_DEFAULT_BEARER}    9
 
 *** Test Cases ***
-# --- 1. Attach (pkt 1) — 4 testy ---
+# --- 1. Attach (pkt 1) - 4 testy ---
 
-EPC-SM-1-001 Attach — sukces, bearer 9 i granice dokumentowane 0 oraz 100
+EPC-SM-1-001 Attach - sukces, bearer 9 i granice dokumentowane 0 oraz 100
     [Documentation]    1.1, 1.4, Założenia: attach w zakresie; po attach bearer 9; UE=0 i UE=100 na granicach.
     [Tags]    EPC-SM-1-001    req_1    attach    happy_path    boundary
     When I attach UE with ID 42
@@ -29,7 +29,7 @@ EPC-SM-1-001 Attach — sukces, bearer 9 i granice dokumentowane 0 oraz 100
     When I attach UE with ID ${DOC_UE_ID_MAX}
     Then response is success
 
-EPC-SM-1-002 Attach — błąd dla ID poza dokumentowanym zakresem
+EPC-SM-1-002 Attach - błąd dla ID poza dokumentowanym zakresem
     [Documentation]    1.2, Założenia: -1, 101, 999 → błąd; sieć pozostaje pusta.
     [Tags]    EPC-SM-1-002    req_1    attach    validation
     FOR    ${invalid_id}    IN    -1    101    999
@@ -38,7 +38,7 @@ EPC-SM-1-002 Attach — błąd dla ID poza dokumentowanym zakresem
     END
     And simulator has no attached UEs
 
-EPC-SM-1-003 Attach — duplikat oraz brak „pół-sesji” po odrzuconym attach
+EPC-SM-1-003 Attach - duplikat oraz brak „pół-sesji” po odrzuconym attach
     [Documentation]    1.3: ponowny attach → błąd, pierwsza sesja bez zmian. 1.2: po błędzie 101 tylko poprawny attach w sieci.
     [Tags]    EPC-SM-1-003    req_1    attach    duplicate    state
     When I attach UE with ID 7
@@ -56,7 +56,7 @@ EPC-SM-1-003 Attach — duplikat oraz brak „pół-sesji” po odrzuconym attac
     Then response is success
     And UE list is exactly 7, 50
 
-EPC-SM-1-004 Attach — wiele UE (10, 50, 90) i ponowny attach po detach
+EPC-SM-1-004 Attach - wiele UE (10, 50, 90) i ponowny attach po detach
     [Documentation]    1.1: wiele UE w sieci. 1.1+2.1: ten sam ID po detach można ponownie dołączyć.
     [Tags]    EPC-SM-1-004    req_1    attach    multi_ue    reattach
     When I attach UE with ID 10
@@ -75,9 +75,9 @@ EPC-SM-1-004 Attach — wiele UE (10, 50, 90) i ponowny attach po detach
     When I attach UE with ID 50
     Then response is success
 
-# --- 2. Detach (pkt 2) — 3 testy ---
+# --- 2. Detach (pkt 2) - 3 testy ---
 
-EPC-SM-2-001 Detach — sukces i brak podłączenia po operacji
+EPC-SM-2-001 Detach - sukces i brak podłączenia po operacji
     [Documentation]    2.1: poprawny detach; odczyt stanu podłączonego UE → błąd.
     [Tags]    EPC-SM-2-001    req_2    detach    happy_path
     When I attach UE with ID 15
@@ -88,7 +88,7 @@ EPC-SM-2-001 Detach — sukces i brak podłączenia po operacji
     When I query attached UE state for ID 15
     Then response is error
 
-EPC-SM-2-002 Detach — scenariusze błędów (niepodłączony, powtórzenie, poza zakresem)
+EPC-SM-2-002 Detach - scenariusze błędów (niepodłączony, powtórzenie, poza zakresem)
     [Documentation]    2.3 + Założenia: nigdy nie attachowany (88), drugi detach (16), ID 101 poza zakresem, UE=0 niepodłączony.
     [Tags]    EPC-SM-2-002    req_2    detach    validation    edge_case
     When I detach UE with ID 88
@@ -104,7 +104,7 @@ EPC-SM-2-002 Detach — scenariusze błędów (niepodłączony, powtórzenie, po
     When I detach UE with ID ${DOC_UE_ID_MIN}
     Then response is error
 
-EPC-SM-2-003 Detach — izolacja sesji i cykl attach/detach na UE=0
+EPC-SM-2-003 Detach - izolacja sesji i cykl attach/detach na UE=0
     [Documentation]    2.1: detach jednego UE nie usuwa drugiego. Założenia: attach/detach na granicy UE=100.
     [Tags]    EPC-SM-2-003    req_2    detach    multi_ue    boundary
     When I attach UE with ID 61
@@ -122,10 +122,10 @@ EPC-SM-2-003 Detach — izolacja sesji i cykl attach/detach na UE=0
     When I detach UE with ID ${DOC_UE_ID_MAX}
     Then response is success
 
-# --- 9. Reset (pkt 9) — 2 testy ---
+# --- 9. Reset (pkt 9) - 2 testy ---
 
-EPC-SM-9-001 Reset — stan początkowy i wyczyszczenie wielu sesji
-    [Documentation]    9.1: reset na pustym symulatorze i po wielu attach — brak podłączonych UE.
+EPC-SM-9-001 Reset - stan początkowy i wyczyszczenie wielu sesji
+    [Documentation]    9.1: reset na pustym symulatorze i po wielu attach - brak podłączonych UE.
     [Tags]    EPC-SM-9-001    req_9    reset
     And simulator has no attached UEs
     When I reset the simulator via API
@@ -136,7 +136,7 @@ EPC-SM-9-001 Reset — stan początkowy i wyczyszczenie wielu sesji
     When I reset the simulator via API
     And simulator has no attached UEs
 
-EPC-SM-9-002 Reset — brak poprzedniej sesji i ponowny attach z bearerem 9
+EPC-SM-9-002 Reset - brak poprzedniej sesji i ponowny attach z bearerem 9
     [Documentation]    9.1 + 1.4: po resecie stary UE niedostępny; możliwy attach z domyślnym bearerem.
     [Tags]    EPC-SM-9-002    req_9    reset    reattach
     When I attach UE with ID 77
