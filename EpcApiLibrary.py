@@ -87,7 +87,7 @@ class EpcApiLibrary:
         )
         return r.status_code, self._safe_json(r)
 
-    def get_bearer_traffic_stats(
+    def get_bearer_traffic_stats_unit(
         self, ue_id: int, bearer_id: int, unit: str | None = None
     ) -> tuple[int, Any]:
         params = {"unit": unit} if unit else {}
@@ -109,6 +109,13 @@ class EpcApiLibrary:
         r = self._session.get(
             f"{self._base}/ues/{int(ue_id)}/traffic",
             params=params,
+            timeout=10,
+        )
+        return r.status_code, self._safe_json(r)
+    
+    def get_bearer_traffic_stats(self, ue_id: int, bearer_id: int) -> tuple[int, Any]:
+        r = self._session.get(
+            f"{self._base}/ues/{int(ue_id)}/bearers/{int(bearer_id)}/traffic",
             timeout=10,
         )
         return r.status_code, self._safe_json(r)
