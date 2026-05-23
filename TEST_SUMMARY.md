@@ -1,105 +1,72 @@
-# Podsumowanie testów `epc_acceptance_v0.robot`
+# Podsumowanie testów akceptacyjnych EPC
 
 ## Cel
 
-Zestaw `epc_acceptance_v0.robot` zawiera skrócone testy akceptacyjne API symulatora EPC.  
-Suite weryfikuje kluczowe scenariusze biznesowe dla:
+Zestaw testów Robot Framework weryfikuje API symulatora Evolved Packet Core (EPC) w trzech obszarach zgodnych z dokumentacją produktu (`README.md`):
 
-- dołączania i odłączania UE,
-- uruchamiania i zatrzymywania ruchu,
-- obsługi bearerów,
-- resetu stanu systemu.
+| Plik                           | Obszar dokumentacji | Funkcjonalności                       |
+| ------------------------------ | ------------------- | ------------------------------------- |
+| `epc_session_management.robot` | pkt 1, 2, 9         | attach, detach, reset                 |
+| `epc_transfer_control.robot`   | pkt 3, 5            | start/stop transferu DL, statystyki   |
+| `channel_managment.robot`      | pkt 6, 7, 8         | dodawanie, odczyt i usuwanie bearerów |
 
 Każdy test startuje od czystego stanu dzięki `Test Setup: Reset Simulator`.
 
-## Zakres i środowisko
+Łącznie: **25 testów** w **3 suite’ach**.
 
-- Plik testów: `lab3/epc_acceptance_v0.robot`
-- Biblioteka API: `lab3/EpcApiLibrary.py`
-- Endpoint bazowy: `http://localhost:8000`
-- Uruchomienie symulatora:
-  - `docker run -p 8000:8000 epc-simulator:1.0.0`
-- Uruchomienie testów:
-  - `robot epc_acceptance_v0.robot`
+## Środowisko i uruchomienie
+
+- Biblioteka API: `EpcApiLibrary.py`
+- Endpoint bazowy: `http://localhost:8000` (zmienna `${EPC_BASE_URL}`)
+- Zależności: `pip install -r requirements.txt`
+- Symulator (przed testami):
+
+  ```bash
+  docker run -p 8000:8000 epc-simulator:1.0.0
+  ```
+
+### Uruchomienie wszystkich suite’ów
+
+Skrypt `run_tests.sh` uruchamia po kolei wszystkie trzy pliki `.robot` i zapisuje raporty Robot Framework w osobnych katalogach:
+
+```bash
+./run_tests.sh
+```
+
+Wyniki (dla każdej suite): `output.xml`, `log.html`, `report.html` w:
+
+| Suite                          | Katalog wyników                   |
+| ------------------------------ | --------------------------------- |
+| `epc_session_management.robot` | `results/epc_session_management/` |
+| `epc_transfer_control.robot`   | `results/epc_transfer_control/`   |
+| `channel_managment.robot`      | `results/channel_managment/`      |
+
+Inny katalog wyników (opcjonalnie):
+
+```bash
+RESULTS_DIR=/ścieżka/do/wyników ./run_tests.sh
+```
+
+### Uruchomienie pojedynczej suite
+
+```bash
+robot --outputdir results/epc_session_management epc_session_management.robot
+robot --outputdir results/epc_transfer_control epc_transfer_control.robot
+robot --outputdir results/channel_managment channel_managment.robot
+```
 
 ## Struktura podejścia testowego
 
 Testy są napisane stylem BDD z czytelnymi krokami:
 
-- `When ...` — akcja na API (np. attach, start traffic, delete bearer),
+- `When ...` — akcja na API (np. attach, start traffic, add bearer),
 - `Then ...` — walidacja statusu HTTP,
-- `And ...` — walidacje pól odpowiedzi.
+- `And ...` — walidacje pól odpowiedzi lub stanu sieci.
 
-W pliku użyto embedded keywords dla akcji z parametrami (np. `When I attach UE with ID ${ue_id}`). Wartości parametrów muszą być w tej samej linii co krok (np. `When I attach UE with ID 42`), a nie w osobnej kolumnie.
+W plikach użyto embedded keywords dla akcji z parametrami (np. `When I attach UE with ID 42`). Wartości parametrów muszą być w tej samej linii co krok, a nie w osobnej kolumnie tabeli Robot Framework.
 
-## Szczegółowy opis 10 testów
+Walidacja sukcesu/błędu:
 
-1. **Attach UE — Sukces i domyślny bearer 9**
-   - **Cel:** potwierdzić poprawne podłączenie UE i automatyczne utworzenie bearera 9.
-   - **Kroki:** attach `UE=42`, pobranie danych UE.
-   - **Asercje:** HTTP `200`, `status=attached`, obecność `bearer_id=9`.
-
-2. **Attach UE — Błąd gdy UE ID poza zakresem (0 i 101)**
-   - **Cel:** walidacja ograniczenia zakresu UE ID.
-   - **Kroki:** attach dla `UE=0` i `UE=101`.
-   - **Asercje:** HTTP `422` dla obu przypadków.
-
-3. **Detach UE — Sukces**
-   - **Cel:** zweryfikować poprawne odłączenie wcześniej podłączonego UE.
-   - **Kroki:** attach `UE=15`, detach `UE=15`, potem GET `UE=15`.
-   - **Asercje:** detach zwraca HTTP `200`, `status=detached`; później GET zwraca HTTP `400` i `detail=UE not found`.
-
-4. **Start ruchu DL — Sukces (Mbps)**
-   - **Cel:** potwierdzić, że ruch można uruchomić dla domyślnego bearera.
-   - **Kroki:** attach `UE=33`, start ruchu na `bearer=9`, `protocol=tcp`, `Mbps=25.5`.
-   - **Asercje:** HTTP `200`, `status=traffic_started`, `target_bps=25500000`.
-
-5. **Pobierz statystyki bearera**
-   - **Cel:** sprawdzić odczyt statystyk aktywnego ruchu.
-   - **Kroki:** attach `UE=77`, start ruchu na `bearer=9`, GET statystyk bearera.
-   - **Asercje:** HTTP `200`, `ue_id=77`, `bearer_id=9`, `protocol=tcp`.
-
-6. **Zatrzymanie ruchu dla bearera**
-   - **Cel:** zweryfikować poprawne zatrzymanie transferu.
-   - **Kroki:** attach `UE=11`, start ruchu, stop ruchu na `bearer=9`.
-   - **Asercje:** HTTP `200`, `status=traffic_stopped`.
-
-7. **Dodaj dedykowany bearer**
-   - **Cel:** potwierdzić możliwość dodania dodatkowego bearera dla UE.
-   - **Kroki:** attach `UE=21`, add `bearer=4`, GET `UE=21`.
-   - **Asercje:** HTTP `200`, `status=bearer_added`, obecność bearera `4` w danych UE.
-
-8. **Usuń dedykowany bearer**
-   - **Cel:** zweryfikować usunięcie bearera dodanego przez użytkownika.
-   - **Kroki:** attach `UE=31`, add `bearer=5`, delete `bearer=5`.
-   - **Asercje:** HTTP `200`, `status=bearer_deleted`.
-
-9. **Usuń bearer — nie można usunąć domyślnego (9)**
-   - **Cel:** wymusić regułę biznesową blokującą usunięcie domyślnego bearera.
-   - **Kroki:** attach `UE=32`, delete `bearer=9`.
-   - **Asercje:** HTTP `400`, `detail=Cannot remove default bearer`.
-
-10. **Reset symulatora**
-    - **Cel:** potwierdzić przywrócenie stanu początkowego.
-    - **Kroki:** attach `UE=41`, reset, pobranie listy UE.
-    - **Asercje:** HTTP `200`, lista UE pusta.
-
-## Co jest pokryte
-
-- `attach` (sukces + walidacja zakresu),
-- `detach` (sukces + brak UE po detach),
-- `traffic start/stop`,
-- `traffic stats` dla pojedynczego bearera,
-- `bearer add/delete`,
-- ochrona domyślnego bearera `9`,
-- globalny reset stanu.
-
-## Co świadomie pominięto w wersji `v0`
-
-To jest wersja skrócona, więc nie obejmuje pełnego przekroju błędów i wariantów z rozbudowanej suite (np. duplikat attach, dodatkowe walidacje formatów payloadu, przypadki nieistniejącego bearera przy starcie ruchu itp.).
-
-## Wynik ostatniego uruchomienia
-
-- **10 testów**
-- **10 zaliczonych**
-- **0 błędów**
+- `epc_session_management.robot` — `Then response is success` (2xx) / `Then response is error` (≥400),
+- `epc_transfer_control.robot` — `Then response status is` z konkretnym kodem lub `Then response is client error` (4xx),
+- `channel_management.robot` — jak w session management (2xx / ≥400).
