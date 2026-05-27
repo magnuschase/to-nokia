@@ -2,7 +2,7 @@
 
 ## Cel
 
-Zestaw testów Robot Framework weryfikuje API symulatora Evolved Packet Core (EPC) w trzech obszarach zgodnych z dokumentacją produktu (`README.md`):
+Zestaw testów Robot Framework weryfikuje API symulatora Evolved Packet Core (EPC) w czterech obszarach zgodnych z dokumentacją produktu (`README.md`):
 
 | Plik                              | Obszar dokumentacji | Funkcjonalności                       |
 | --------------------------------- | ------------------- | ------------------------------------- |
@@ -28,7 +28,7 @@ Każdy test startuje od czystego stanu dzięki `Test Setup: Reset Simulator`.
 
 ### Uruchomienie wszystkich suite’ów
 
-Skrypt `run_tests.sh` uruchamia po kolei wszystkie trzy pliki `.robot` i zapisuje raporty Robot Framework w osobnych katalogach:
+Skrypt `run_tests.sh` uruchamia po kolei wszystkie cztery pliki `.robot` i zapisuje raporty Robot Framework w osobnych katalogach:
 
 ```bash
 ./run_tests.sh
