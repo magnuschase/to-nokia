@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.4.2 (Python 3.8.10 on darwin)" name="Generator">
+<meta content="Robot Framework 7.4.2 (Python 3.13.12 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1881,22 +1881,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,247],[],[[5,0,6,[7,8,9],[1,55,41],[]],[10,0,11,[7,8,12],[1,96,20],[]],[13,0,14,[7,8,15],[1,117,26],[]],[16,0,17,[8,18,9],[1,143,29],[]],[19,0,20,[8,21,9],[1,172,22],[]],[22,0,23,[8,21,12],[1,195,20],[]],[24,0,25,[8,21,15],[1,215,16],[]],[26,0,27,[8,21,15],[1,231,15],[]]],[],[8,8,0,0]];
+window.output["suite"] = [1,2,3,4,[],[1,0,171],[],[[5,0,6,[7,8,9],[1,31,26],[]],[10,0,11,[7,8,12],[1,57,22],[]],[13,0,14,[7,8,15],[1,79,21],[]],[16,0,17,[8,18,9],[1,100,20],[]],[19,0,20,[8,21,9],[1,120,16],[]],[22,0,23,[8,21,12],[1,136,14],[]],[24,0,25,[8,21,15],[1,150,10],[]],[26,0,27,[8,21,15],[1,160,11],[]]],[],[8,8,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Channel Management","*/Users/mateuszjanicki/Desktop/to-nokia/channel_management.robot","*../../channel_management.robot","*<p>Testy akceptacyjne API symulatora EPC - Obszar 2: Zarządzanie kanałami (Bearer). Obejmuje funkcjonalności: 6 (Dodawanie), 7 (Sprawdzanie), 8 (Usuwanie). Przed uruchomieniem: docker run -p 8000:8000 epc-simulator:1.0.0\x3c/p>","*06.01 Dodaj dedykowany bearer - Sukces","*<p>6. Możliwe jest dodanie dedykowanych bearer-ów dla UE.\x3c/p>","*add","*bearer","*happy_path","*06.02 Dodaj bearer - Błąd gdy ID poza zakresem","*<p>6. Jeśli bearer jest spoza zakresu (1-9) - zostanie wyświetlony błąd.\x3c/p>","*validation","*06.03 Dodaj bearer - Błąd gdy bearer został już dodany","*<p>6. Jeśli bearer został już dodany - zostanie wyświetlony błąd.\x3c/p>","*error","*07.01 Sprawdzenie podłączonych bearer-ów - Sukces","*<p>7. Możliwe jest sprawdzenia aktualnie dostępnych bearerów dla UE.\x3c/p>","*check","*08.01 Usuń dedykowany bearer - Sukces","*<p>8. Możliwe jest usunięcie dedykowanego bearer'a dla UE.\x3c/p>","*delete","*08.02 Usuń bearer - Błąd gdy ID poza zakresem","*<p>8. Jeśli bearer jest spoza zakresu - zostanie wyświetlony błąd.\x3c/p>","*08.03 Usuń bearer - Błąd gdy bearer nie jest aktywny","*<p>8. Jeśli bearer nie jest aktywny - zostanie wyświetlony błąd.\x3c/p>","*08.04 Usuń bearer - Nie można usunąć domyślnego (9)","*<p>8. Nie ma możliwości usunięcia domyślnego bearera.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Channel Management","*/Users/jakubkapala/Code/studia/sem6/to-nokia/to-nokia/channel_management.robot","*../../channel_management.robot","*<p>Testy akceptacyjne API symulatora EPC - Obszar 2: Zarządzanie kanałami (Bearer). Obejmuje funkcjonalności: 6 (Dodawanie), 7 (Sprawdzanie), 8 (Usuwanie). Przed uruchomieniem: docker run -p 8000:8000 epc-simulator:1.0.0\x3c/p>","*06.01 Dodaj dedykowany bearer - Sukces","*<p>6. Możliwe jest dodanie dedykowanych bearer-ów dla UE.\x3c/p>","*add","*bearer","*happy_path","*06.02 Dodaj bearer - Błąd gdy ID poza zakresem","*<p>6. Jeśli bearer jest spoza zakresu (1-9) - zostanie wyświetlony błąd.\x3c/p>","*validation","*06.03 Dodaj bearer - Błąd gdy bearer został już dodany","*<p>6. Jeśli bearer został już dodany - zostanie wyświetlony błąd.\x3c/p>","*error","*07.01 Sprawdzenie podłączonych bearer-ów - Sukces","*<p>7. Możliwe jest sprawdzenia aktualnie dostępnych bearerów dla UE.\x3c/p>","*check","*08.01 Usuń dedykowany bearer - Sukces","*<p>8. Możliwe jest usunięcie dedykowanego bearer'a dla UE.\x3c/p>","*delete","*08.02 Usuń bearer - Błąd gdy ID poza zakresem","*<p>8. Jeśli bearer jest spoza zakresu - zostanie wyświetlony błąd.\x3c/p>","*08.03 Usuń bearer - Błąd gdy bearer nie jest aktywny","*<p>8. Jeśli bearer nie jest aktywny - zostanie wyświetlony błąd.\x3c/p>","*08.04 Usuń bearer - Nie można usunąć domyślnego (9)","*<p>8. Nie ma możliwości usunięcia domyślnego bearera.\x3c/p>"]);
 </script>
 <script type="text/javascript">
 window.output["stats"] = [[{"elapsed":"00:00:00","fail":0,"label":"All Tests","pass":8,"skip":0}],[{"elapsed":"00:00:00","fail":0,"label":"add","pass":3,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"bearer","pass":8,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"check","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"delete","pass":4,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"error","pass":3,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"happy_path","pass":3,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"validation","pass":2,"skip":0}],[{"elapsed":"00:00:00","fail":0,"id":"s1","label":"Channel Management","name":"Channel Management","pass":8,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1779814273978;
+window.output["baseMillis"] = 1779902742955;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 252;
+window.output["generated"] = 175;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
