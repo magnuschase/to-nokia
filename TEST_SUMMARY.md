@@ -36,6 +36,8 @@ Skrypt `run_tests.sh` uruchamia po kolei wszystkie cztery pliki `.robot` i zapis
 
 Wyniki (dla każdej suite): `output.xml`, `log.html`, `report.html` w:
 
+Właściwy raport do oddania znajduje się w pliku `RAPORT.xlsx`.
+
 | Suite                             | Katalog wyników                      |
 | --------------------------------- | ------------------------------------ |
 | `epc_session_management.robot`    | `results/epc_session_management/`    |
