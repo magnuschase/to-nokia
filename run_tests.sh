@@ -10,6 +10,7 @@ ROBOT_FILES=(
     epc_session_management.robot
     epc_transfer_control.robot
     channel_management.robot
+    epc_readings_units_limits.robot
 )
 
 exit_code=0
